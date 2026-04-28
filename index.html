@@ -7,33 +7,36 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&family=DM+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --wine:#6B0F1A; --wine-deep:#3D0610; --burgundy:#8B1A2B; --rose:#C9A0A8;
-    --gold:#C9A961; --gold-deep:#A8893F; --gold-soft:#F5E8C8; --copper:#B87333;
+    --wine:#6B0F1A; --wine-deep:#3D0610; --burgundy:#8B1A2B;
+    --gold:#C9A961; --gold-deep:#A8893F; --gold-soft:#F5E8C8;
     --cream:#FFF8F0; --cream-soft:#FAF1DF; --paper:#FFFCF7;
     --ink:#1A0A0A; --ink-soft:#3D2828; --gray:#7A6464;
     --border:rgba(107,15,26,0.16); --border-gold:rgba(201,169,97,0.30);
     --shadow-sm:0 2px 12px rgba(61,6,16,0.10);
     --shadow-md:0 8px 28px rgba(61,6,16,0.18);
     --green:#2E7D32; --orange:#E65100; --info:#2A5C8A;
+    /* Colores de marca */
+    --smirnoff:#E3000B; --smirnoff-bg:#FFF0F1;
+    --oldparr:#1B5E20; --oldparr-bg:#F1F8F2;
+    --buchanans:#1A237E; --buchanans-bg:#F0F1F9;
+    --meico:#6B0F1A; --meico-bg:#FFF4F5;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;
     background-image:radial-gradient(ellipse at 0% 0%,rgba(107,15,26,.10) 0%,transparent 55%),radial-gradient(ellipse at 100% 100%,rgba(201,169,97,.12) 0%,transparent 55%);}
 
   /* ═══ HEADER ═══ */
-  .header{background:linear-gradient(135deg,var(--wine-deep) 0%,var(--wine) 55%,var(--burgundy) 100%);padding:1.75rem 1.25rem 1.25rem;position:relative;overflow:hidden;}
+  .header{background:linear-gradient(135deg,var(--wine-deep) 0%,var(--wine) 55%,var(--burgundy) 100%);padding:1.6rem 1.25rem 1.1rem;position:relative;overflow:hidden;}
   .header::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23C9A961' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
   .header-inner{position:relative;z-index:1;max-width:480px;margin:0 auto;}
-  .logo-wrap{display:flex;align-items:center;gap:12px;margin-bottom:.75rem;}
-  .logo-icon{width:50px;height:50px;background:linear-gradient(135deg,var(--gold),var(--gold-deep));border-radius:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(201,169,97,.4);font-size:24px;}
+  .logo-wrap{display:flex;align-items:center;gap:12px;margin-bottom:.6rem;}
+  .logo-icon{width:48px;height:48px;background:linear-gradient(135deg,var(--gold),var(--gold-deep));border-radius:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(201,169,97,.4);font-size:24px;}
   .logo-text{color:white;}
-  .logo-text h1{font-size:1.55rem;font-weight:900;letter-spacing:-.02em;line-height:1;}
-  .logo-text p{font-size:.62rem;font-weight:600;letter-spacing:.28em;color:var(--gold-soft);text-transform:uppercase;margin-top:3px;}
-  .header-sub{background:rgba(255,255,255,.10);border-radius:10px;padding:7px 11px;font-size:.68rem;color:rgba(255,255,255,.88);font-weight:500;display:flex;align-items:center;gap:6px;border:1px solid rgba(201,169,97,.20);}
-  .brand-chips{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap;}
-  .brand-chip{background:rgba(201,169,97,.16);border:1px solid rgba(201,169,97,.30);border-radius:20px;padding:3px 11px;font-size:.6rem;font-weight:700;color:var(--gold-soft);letter-spacing:.06em;}
+  .logo-text h1{font-size:1.5rem;font-weight:900;letter-spacing:-.02em;line-height:1;}
+  .logo-text p{font-size:.6rem;font-weight:600;letter-spacing:.28em;color:var(--gold-soft);text-transform:uppercase;margin-top:3px;}
+  .header-sub{background:rgba(255,255,255,.10);border-radius:10px;padding:6px 11px;font-size:.66rem;color:rgba(255,255,255,.88);font-weight:500;display:flex;align-items:center;gap:6px;border:1px solid rgba(201,169,97,.20);}
 
-  /* ═══ TURN BADGE (código activo) ═══ */
+  /* ═══ TURN BADGE ═══ */
   .turn-bar{max-width:480px;margin:0 auto;padding:0 1rem;}
   .turn-badge{margin-top:10px;background:linear-gradient(135deg,var(--gold-soft),#fff);border:1.5px solid var(--gold);border-radius:14px;padding:8px 12px;display:none;align-items:center;gap:10px;box-shadow:var(--shadow-sm);}
   .turn-badge.active{display:flex;}
@@ -52,11 +55,10 @@
   .tab-btn svg{width:16px;height:16px;}
   .tab-btn.active{background:white;color:var(--wine);box-shadow:var(--shadow-sm);}
 
-  /* ═══ MAIN ═══ */
   .main{max-width:480px;margin:0 auto;padding:1rem;}
 
   /* ═══ CARD ═══ */
-  .card{background:white;border-radius:18px;border:1px solid var(--border);padding:1.15rem;margin-bottom:.875rem;box-shadow:var(--shadow-sm);position:relative;overflow:hidden;}
+  .card{background:white;border-radius:18px;border:1px solid var(--border);padding:1.1rem;margin-bottom:.875rem;box-shadow:var(--shadow-sm);position:relative;overflow:hidden;}
   .card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--wine),var(--gold));}
   .card-label{font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.16em;color:var(--wine);margin-bottom:.875rem;display:flex;align-items:center;gap:6px;}
 
@@ -74,13 +76,15 @@
   .row-2{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
 
   /* ═══ FOTO ═══ */
-  .foto-box{border:2px dashed var(--border);background:var(--cream-soft);border-radius:14px;padding:14px;text-align:center;cursor:pointer;transition:all .2s;position:relative;overflow:hidden;}
+  .foto-box{border:2px dashed var(--border);background:var(--cream-soft);border-radius:14px;padding:14px;text-align:center;cursor:pointer;transition:all .2s;position:relative;overflow:hidden;display:block;}
   .foto-box:hover{border-color:var(--wine);background:white;}
   .foto-box.has-photo{padding:0;border-style:solid;border-color:var(--wine);background:white;}
+  .foto-box.processing{opacity:.7;pointer-events:none;}
   .foto-input{display:none;}
-  .foto-icon{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--wine),var(--burgundy));display:flex;align-items:center;justify-content:center;margin:0 auto 8px;color:white;}
+  .foto-icon{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--wine),var(--burgundy));display:flex;align-items:center;justify-content:center;margin:0 auto 8px;color:white;}
   .foto-text{font-size:.78rem;font-weight:700;color:var(--wine-deep);}
   .foto-hint{font-size:.62rem;color:var(--gray);font-weight:500;margin-top:3px;}
+  .foto-meta{font-size:.6rem;color:var(--green);font-weight:700;margin-top:3px;font-family:'DM Mono',monospace;}
   .foto-preview-wrap{position:relative;}
   .foto-preview{width:100%;max-height:280px;object-fit:cover;display:block;}
   .foto-remove{position:absolute;top:8px;right:8px;background:rgba(26,10,10,.85);color:white;border:none;border-radius:50%;width:30px;height:30px;cursor:pointer;font-size:14px;font-weight:900;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);}
@@ -98,67 +102,126 @@
   .item-name{font-size:.78rem;font-weight:800;color:var(--wine-deep);line-height:1.2;}
   .item-meta{font-size:.62rem;color:var(--gray);font-weight:600;margin-top:2px;font-family:'DM Mono',monospace;}
   .item-sub{font-family:'DM Mono',monospace;font-size:.78rem;font-weight:700;color:var(--wine);white-space:nowrap;}
-  .item-del{background:transparent;border:none;color:var(--orange);font-size:18px;cursor:pointer;padding:4px 6px;line-height:1;border-radius:6px;transition:background .15s;}
+  .item-del{background:transparent;border:none;color:var(--orange);font-size:18px;cursor:pointer;padding:4px 6px;line-height:1;border-radius:6px;}
   .item-del:hover{background:rgba(230,81,0,.1);}
   .empty-list{text-align:center;padding:22px 12px;color:var(--gray);font-size:.7rem;font-style:italic;font-weight:500;border:1.5px dashed var(--border);border-radius:12px;}
 
-  /* ═══ TOTALS BAR ═══ */
+  /* ═══ TOTALS ═══ */
   .totals-bar{background:linear-gradient(135deg,var(--wine),var(--burgundy));color:white;border-radius:14px;padding:14px 16px;margin-top:12px;display:flex;justify-content:space-between;align-items:center;box-shadow:var(--shadow-md);}
   .totals-lbl{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--gold-soft);}
   .totals-val{font-family:'DM Mono',monospace;font-size:1.35rem;font-weight:700;color:white;line-height:1;margin-top:2px;}
   .totals-meta{font-size:.6rem;color:rgba(255,255,255,.65);font-weight:600;margin-top:2px;}
 
-  /* ═══ ACCORDION (Voz Consumidor) ═══ */
-  .acc-section{margin-bottom:10px;border:1.5px solid var(--border);border-radius:14px;overflow:hidden;background:white;}
-  .acc-header{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;user-select:none;background:linear-gradient(135deg,rgba(107,15,26,.06),rgba(201,169,97,.06));transition:background .15s;}
-  .acc-header:active{background:rgba(107,15,26,.10);}
-  .acc-header-left{display:flex;align-items:center;gap:10px;}
-  .acc-num{width:28px;height:28px;border-radius:8px;background:var(--wine);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.78rem;font-family:'DM Mono',monospace;}
-  .acc-title{font-size:.78rem;font-weight:800;color:var(--wine-deep);line-height:1.1;}
-  .acc-sub{font-size:.6rem;color:var(--gray);font-weight:600;margin-top:2px;}
-  .acc-chev{font-size:18px;transition:transform .3s;color:var(--wine);}
-  .acc-chev.open{transform:rotate(180deg);}
-  .acc-body{padding:14px;border-top:1px solid var(--border);display:none;}
-  .acc-body.open{display:block;}
+  /* ═══════════ VOZ CONSUMIDOR ═══════════ */
+  .vz-progress{position:sticky;top:0;background:rgba(255,248,240,.94);backdrop-filter:blur(10px);padding:8px 0 10px;z-index:5;margin:-1rem -1rem .75rem;padding:10px 1rem;border-bottom:1px solid var(--border);}
+  .vz-progress-track{height:5px;background:rgba(107,15,26,.1);border-radius:4px;overflow:hidden;}
+  .vz-progress-fill{height:100%;background:linear-gradient(90deg,var(--wine),var(--gold));border-radius:4px;width:0%;transition:width .35s ease;}
+  .vz-progress-meta{display:flex;justify-content:space-between;align-items:center;margin-top:4px;font-size:.62rem;font-weight:700;}
+  .vz-progress-pct{font-family:'DM Mono',monospace;color:var(--wine);}
+  .vz-progress-label{color:var(--gray);text-transform:uppercase;letter-spacing:.1em;}
 
-  /* ═══ NPS / RATING CHIPS ═══ */
-  .rating-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;}
-  .rating-chip{background:var(--cream-soft);border:1.5px solid var(--border);border-radius:10px;padding:8px 4px;text-align:center;cursor:pointer;font-weight:700;font-size:.85rem;transition:all .15s;color:var(--gray);font-family:'DM Mono',monospace;}
-  .rating-chip:hover{border-color:var(--wine);}
-  .rating-chip.on{background:var(--wine);border-color:var(--wine);color:white;box-shadow:0 2px 10px rgba(107,15,26,.3);}
-  .rating-chip.on.gold{background:var(--gold);border-color:var(--gold);color:var(--ink);box-shadow:0 2px 10px rgba(201,169,97,.4);}
+  .vz-section{margin-bottom:14px;}
+  .vz-section-head{display:flex;align-items:center;gap:10px;padding:8px 0 12px;}
+  .vz-section-icon{width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:18px;color:white;flex-shrink:0;}
+  .vz-section-title{font-size:.85rem;font-weight:900;color:var(--ink);line-height:1.1;}
+  .vz-section-sub{font-size:.6rem;color:var(--gray);font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-top:2px;}
 
-  /* ═══ BUTTON ═══ */
+  .vz-q{margin-bottom:14px;padding:14px;background:white;border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow-sm);}
+  .vz-q-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:10px;}
+  .vz-q-num{flex-shrink:0;width:24px;height:24px;border-radius:7px;background:var(--wine);color:var(--gold);font-family:'DM Mono',monospace;font-weight:700;font-size:.7rem;display:flex;align-items:center;justify-content:center;}
+  .vz-q-icon{font-size:1rem;flex-shrink:0;line-height:1.4;}
+  .vz-q-text{font-size:.84rem;font-weight:700;color:var(--ink);line-height:1.3;}
+  .vz-q-text .req{color:var(--orange);}
+  .vz-q-hint{font-size:.6rem;color:var(--gray);font-weight:600;margin-bottom:8px;font-style:italic;padding-left:32px;}
+
+  .chip-grid{display:flex;flex-wrap:wrap;gap:6px;}
+  .chip{padding:9px 14px;border:1.5px solid var(--border);background:white;border-radius:24px;font-family:'Outfit',sans-serif;font-size:.78rem;font-weight:700;color:var(--ink-soft);cursor:pointer;user-select:none;transition:all .15s;display:inline-flex;align-items:center;gap:5px;}
+  .chip:active{transform:scale(.94);}
+  .chip:hover{border-color:var(--wine);color:var(--wine);}
+  .chip.on{background:var(--wine);border-color:var(--wine);color:white;box-shadow:0 3px 10px rgba(107,15,26,.3);}
+  .chip-multi.on::after{content:' ✓';font-size:.7rem;}
+
+  .other-input{margin-top:8px;display:none;}
+  .other-input.show{display:block;animation:slideDown .25s ease;}
+  @keyframes slideDown{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+
+  /* ═══ BRAND CARDS ═══ */
+  .brand-card{border-radius:16px;padding:0;margin-bottom:14px;overflow:hidden;border:2px solid;background:white;}
+  .brand-bar{height:4px;}
+  .brand-head{display:flex;align-items:center;gap:10px;padding:14px 16px 8px;}
+  .brand-logo{font-size:.95rem;font-weight:900;letter-spacing:.04em;}
+  .brand-tag{font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;padding:3px 10px;border-radius:14px;color:white;}
+  .brand-body{padding:0 14px 14px;}
+
+  .brand-smirnoff{border-color:var(--smirnoff);background:linear-gradient(180deg,var(--smirnoff-bg),white 60%);}
+  .brand-smirnoff .brand-bar{background:var(--smirnoff);}
+  .brand-smirnoff .brand-logo{color:var(--smirnoff);}
+  .brand-smirnoff .brand-tag{background:var(--smirnoff);}
+  .brand-smirnoff .vz-q{border-color:rgba(227,0,11,.18);}
+  .brand-smirnoff .vz-q-num{background:var(--smirnoff);color:white;}
+  .brand-smirnoff .chip.on{background:var(--smirnoff);border-color:var(--smirnoff);box-shadow:0 3px 10px rgba(227,0,11,.3);}
+  .brand-smirnoff .chip:hover{color:var(--smirnoff);border-color:var(--smirnoff);}
+
+  .brand-oldparr{border-color:var(--oldparr);background:linear-gradient(180deg,var(--oldparr-bg),white 60%);}
+  .brand-oldparr .brand-bar{background:linear-gradient(90deg,var(--oldparr),var(--gold));}
+  .brand-oldparr .brand-logo{color:var(--oldparr);}
+  .brand-oldparr .brand-tag{background:var(--oldparr);}
+  .brand-oldparr .vz-q{border-color:rgba(27,94,32,.18);}
+  .brand-oldparr .vz-q-num{background:var(--oldparr);color:var(--gold);}
+  .brand-oldparr .chip.on{background:var(--oldparr);border-color:var(--oldparr);box-shadow:0 3px 10px rgba(27,94,32,.3);}
+  .brand-oldparr .chip:hover{color:var(--oldparr);border-color:var(--oldparr);}
+
+  .brand-buchanans{border-color:var(--buchanans);background:linear-gradient(180deg,var(--buchanans-bg),white 60%);}
+  .brand-buchanans .brand-bar{background:linear-gradient(90deg,var(--buchanans),var(--gold));}
+  .brand-buchanans .brand-logo{color:var(--buchanans);}
+  .brand-buchanans .brand-tag{background:var(--buchanans);}
+  .brand-buchanans .vz-q{border-color:rgba(26,35,126,.18);}
+  .brand-buchanans .vz-q-num{background:var(--buchanans);color:var(--gold);}
+  .brand-buchanans .chip.on{background:var(--buchanans);border-color:var(--buchanans);box-shadow:0 3px 10px rgba(26,35,126,.3);}
+  .brand-buchanans .chip:hover{color:var(--buchanans);border-color:var(--buchanans);}
+
+  .brand-meico{border-color:var(--meico);background:linear-gradient(180deg,var(--meico-bg),white 60%);}
+  .brand-meico .brand-bar{background:linear-gradient(90deg,var(--meico),var(--gold));}
+  .brand-meico .brand-logo{color:var(--meico);}
+  .brand-meico .brand-tag{background:var(--meico);}
+  .brand-meico .vz-q{border-color:rgba(107,15,26,.18);}
+  .brand-meico .vz-q-num{background:var(--meico);color:var(--gold);}
+
+  .vz-vino-conditional{display:none;}
+  .vz-vino-conditional.show{display:block;}
+
+  /* iconos sección */
+  .si-demo{background:linear-gradient(135deg,#7B4F9D,#5E3A85);}
+  .si-habits{background:linear-gradient(135deg,#D4A574,#B8845A);}
+  .si-brands{background:linear-gradient(135deg,#3F51B5,#283593);}
+  .si-close{background:linear-gradient(135deg,var(--wine),var(--burgundy));}
+
+  /* ═══ BUTTONS ═══ */
   .btn-primary{width:100%;background:linear-gradient(135deg,var(--wine),var(--burgundy));color:white;border:none;border-radius:14px;padding:15px;font-family:'Outfit',sans-serif;font-size:.95rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;box-shadow:0 8px 24px rgba(61,6,16,.30);transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:.5rem;}
   .btn-primary:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(61,6,16,.35);}
-  .btn-primary:active{transform:translateY(0);}
   .btn-primary:disabled{opacity:.6;cursor:not-allowed;transform:none;}
   .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:var(--ink);box-shadow:0 6px 18px rgba(201,169,97,.35);}
-  .btn-gold:hover{box-shadow:0 10px 24px rgba(201,169,97,.45);}
-  .btn-secondary{width:100%;background:white;border:1.5px solid var(--border);color:var(--wine);border-radius:12px;padding:11px;font-family:'Outfit',sans-serif;font-size:.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;text-transform:uppercase;letter-spacing:.08em;transition:all .15s;}
-  .btn-secondary:hover{background:var(--cream-soft);border-color:var(--wine);}
   .btn-add{background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:var(--ink);border:none;border-radius:10px;padding:10px 16px;font-family:'Outfit',sans-serif;font-size:.78rem;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;text-transform:uppercase;letter-spacing:.08em;width:100%;margin-top:8px;box-shadow:0 4px 12px rgba(201,169,97,.3);}
   .btn-reset{width:100%;background:transparent;border:none;color:var(--gray);font-family:'Outfit',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;padding:8px;text-decoration:underline;}
 
   /* ═══ MODAL ═══ */
   .modal-overlay{position:fixed;inset:0;background:rgba(26,10,10,.88);backdrop-filter:blur(14px);display:none;align-items:center;justify-content:center;padding:1rem;z-index:100;}
   .modal-overlay.show{display:flex;}
-  .modal-box{background:white;border-radius:24px;padding:1.4rem;width:100%;max-width:420px;border-top:4px solid var(--gold);box-shadow:0 24px 80px rgba(0,0,0,.5);animation:slideUp .3s ease;}
+  .modal-box{background:white;border-radius:24px;padding:1.4rem;width:100%;max-width:420px;border-top:4px solid var(--gold);box-shadow:0 24px 80px rgba(0,0,0,.5);animation:slideUp .3s ease;max-height:90vh;overflow-y:auto;}
   @keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
   .modal-title{font-size:1.05rem;font-weight:900;color:var(--ink);margin-bottom:2px;display:flex;align-items:center;gap:8px;}
   .modal-sub{font-size:.62rem;color:var(--gray);font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem;}
   .code-display{background:linear-gradient(135deg,var(--wine-deep),var(--wine));color:var(--gold);border-radius:12px;padding:12px;text-align:center;margin-bottom:.75rem;}
   .code-lbl{font-size:.55rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);opacity:.85;}
   .code-val{font-family:'DM Mono',monospace;font-size:1.6rem;font-weight:700;letter-spacing:.18em;margin-top:3px;}
-  .preview-box{background:var(--cream-soft);border:1.5px solid var(--border);border-radius:12px;padding:11px;font-family:'DM Mono',monospace;font-size:.66rem;line-height:1.7;color:var(--ink);max-height:240px;overflow-y:auto;margin-bottom:.875rem;white-space:pre-wrap;}
+  .preview-box{background:var(--cream-soft);border:1.5px solid var(--border);border-radius:12px;padding:11px;font-family:'DM Mono',monospace;font-size:.66rem;line-height:1.7;color:var(--ink);max-height:240px;overflow-y:auto;margin-bottom:.875rem;white-space:pre-wrap;word-break:break-word;}
   .btn-copy{width:100%;background:linear-gradient(135deg,#25d366,#128c7e);color:white;border:none;border-radius:12px;padding:13px;font-family:'Outfit',sans-serif;font-size:.88rem;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 6px 20px rgba(37,211,102,.32);margin-bottom:8px;}
   .btn-close{width:100%;background:transparent;border:1.5px solid var(--border);color:var(--gray);border-radius:11px;font-family:'Outfit',sans-serif;font-size:.72rem;font-weight:700;cursor:pointer;padding:10px;text-transform:uppercase;letter-spacing:.1em;}
-  .btn-close:hover{background:var(--cream-soft);}
 
   .spinner{width:14px;height:14px;border:2px solid rgba(255,255,255,.4);border-top-color:white;border-radius:50%;animation:spin .7s linear infinite;display:inline-block;}
   @keyframes spin{to{transform:rotate(360deg)}}
 
-  .info-row{display:flex;gap:8px;background:var(--cream-soft);border:1px solid var(--border);border-radius:10px;padding:9px 11px;font-size:.7rem;color:var(--ink-soft);font-weight:600;margin-bottom:10px;}
+  .info-row{display:flex;gap:8px;background:var(--cream-soft);border:1px solid var(--border);border-radius:10px;padding:9px 11px;font-size:.7rem;color:var(--ink-soft);font-weight:600;margin-bottom:10px;align-items:center;}
   .info-row strong{color:var(--wine);font-family:'DM Mono',monospace;letter-spacing:.05em;}
 
   .divider{display:flex;align-items:center;gap:8px;margin:1rem 0 .75rem;font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:var(--gray);}
@@ -168,6 +231,8 @@
     .header{padding:1.4rem 1rem 1rem;}
     .main{padding:.75rem;}
     .tab-btn{font-size:.6rem;}
+    .vz-q-text{font-size:.78rem;}
+    .chip{padding:8px 12px;font-size:.74rem;}
   }
 </style>
 </head>
@@ -178,7 +243,7 @@
   <div class="header-inner">
     <div class="logo-wrap">
       <div class="logo-icon">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path d="M8 2h8v3l-2 2v7l3 4v4H7v-4l3-4V7L8 5V2z" stroke="white" stroke-width="1.6" stroke-linejoin="round" fill="rgba(255,255,255,0.18)"/>
           <path d="M10 11h4" stroke="white" stroke-width="1.4" stroke-linecap="round" opacity=".7"/>
         </svg>
@@ -194,12 +259,6 @@
         <path d="M12 6v6l4 2" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-linecap="round"/>
       </svg>
       Ingreso · Ventas · Voz Consumidor · Salida
-    </div>
-    <div class="brand-chips">
-      <span class="brand-chip">🥃 Whisky</span>
-      <span class="brand-chip">🍸 Ron</span>
-      <span class="brand-chip">🍷 Vino</span>
-      <span class="brand-chip">🥂 Aguardiente</span>
     </div>
   </div>
 </div>
@@ -244,40 +303,22 @@
 
 <!-- ████████ FORM INGRESO ████████ -->
 <form id="form-ingreso" onsubmit="submitIngreso(event)">
-
   <div class="card">
     <div class="card-label">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="var(--wine)" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="7" r="4" stroke="var(--wine)" stroke-width="2"/></svg>
       Datos del Impulsador
     </div>
-
     <div class="field">
       <label class="field-label">Campaña</label>
-      <div class="sel-wrap">
-        <select class="sel loading" id="i-campana" onchange="onCampana()" required>
-          <option value="">Cargando campañas...</option>
-        </select>
-      </div>
+      <div class="sel-wrap"><select class="sel loading" id="i-campana" onchange="onCampana()" required><option value="">Cargando campañas...</option></select></div>
     </div>
-
     <div class="field">
       <label class="field-label">Usuario / Impulsador</label>
-      <div class="sel-wrap">
-        <select class="sel" id="i-usuario" onchange="onUsuario()" required>
-          <option value="">Selecciona campaña primero</option>
-        </select>
-      </div>
+      <div class="sel-wrap"><select class="sel" id="i-usuario" onchange="onUsuario()" required><option value="">Selecciona campaña primero</option></select></div>
     </div>
-
     <div class="row-2">
-      <div class="field">
-        <label class="field-label">Cédula</label>
-        <input class="inp" id="i-cedula" placeholder="—" readonly>
-      </div>
-      <div class="field">
-        <label class="field-label">Contacto</label>
-        <input class="inp" id="i-contacto" placeholder="—" readonly>
-      </div>
+      <div class="field"><label class="field-label">Cédula</label><input class="inp" id="i-cedula" placeholder="—" readonly></div>
+      <div class="field"><label class="field-label">Contacto</label><input class="inp" id="i-contacto" placeholder="—" readonly></div>
     </div>
   </div>
 
@@ -288,19 +329,11 @@
     </div>
     <div class="field">
       <label class="field-label">Ciudad</label>
-      <div class="sel-wrap">
-        <select class="sel loading" id="i-ciudad" onchange="onCiudad('i')" required>
-          <option value="">Cargando ciudades...</option>
-        </select>
-      </div>
+      <div class="sel-wrap"><select class="sel loading" id="i-ciudad" onchange="onCiudad('i')" required><option value="">Cargando ciudades...</option></select></div>
     </div>
     <div class="field">
       <label class="field-label">Punto de Venta</label>
-      <div class="sel-wrap">
-        <select class="sel" id="i-pdv" required>
-          <option value="">Selecciona ciudad primero</option>
-        </select>
-      </div>
+      <div class="sel-wrap"><select class="sel" id="i-pdv" required><option value="">Selecciona ciudad primero</option></select></div>
     </div>
     <div id="i-loc"></div>
   </div>
@@ -311,13 +344,11 @@
       Foto del PDV
     </div>
     <label class="foto-box" id="i-foto-box" for="i-foto-input">
-      <div class="foto-content" id="i-foto-content">
-        <div class="foto-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2v11z" stroke="white" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="13" r="4" stroke="white" stroke-width="2"/></svg>
-        </div>
-        <div class="foto-text">Tomar foto del PDV</div>
-        <div class="foto-hint">Toca para abrir cámara · obligatorio</div>
+      <div class="foto-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2v11z" stroke="white" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="13" r="4" stroke="white" stroke-width="2"/></svg>
       </div>
+      <div class="foto-text">Tomar foto del PDV</div>
+      <div class="foto-hint">Toca para abrir cámara</div>
       <input type="file" id="i-foto-input" class="foto-input" accept="image/*" capture="environment" onchange="onFotoChange(event,'i')">
     </label>
   </div>
@@ -327,7 +358,7 @@
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="var(--wine)" stroke-width="2" stroke-linejoin="round"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="var(--wine)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       Observación de Ingreso
     </div>
-    <textarea class="ta" id="i-obs" placeholder="Estado del PDV al inicio del turno, surtido, novedades..."></textarea>
+    <textarea class="ta" id="i-obs" placeholder="Estado del PDV al inicio del turno..."></textarea>
   </div>
 
   <button class="btn-primary" type="submit" id="btn-ingreso">
@@ -339,10 +370,8 @@
 
 <!-- ████████ FORM VENTAS ████████ -->
 <form id="form-ventas" style="display:none" onsubmit="submitVentas(event)">
-
   <div class="info-row" id="v-info">
-    <span>📋 Turno: <strong id="v-info-code">—</strong></span>
-    <span>·</span>
+    <span>📋 Turno: <strong id="v-info-code">—</strong></span><span>·</span>
     <span>🏪 <strong id="v-info-pdv">—</strong></span>
   </div>
 
@@ -351,44 +380,27 @@
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 11V7a3 3 0 016 0v4" stroke="var(--wine)" stroke-width="2" stroke-linecap="round"/><path d="M5 9h14l-1 11H6L5 9z" stroke="var(--wine)" stroke-width="2" stroke-linejoin="round"/></svg>
       Agregar Producto
     </div>
-
     <div class="item-add-box">
       <div class="field">
         <label class="field-label">Producto / SKU</label>
-        <div class="sel-wrap">
-          <select class="sel loading" id="v-sku" onchange="onSku()">
-            <option value="">Cargando productos...</option>
-          </select>
-        </div>
+        <div class="sel-wrap"><select class="sel loading" id="v-sku" onchange="onSku()"><option value="">Cargando productos...</option></select></div>
       </div>
       <div class="row-2">
-        <div class="field">
-          <label class="field-label">Cantidad</label>
-          <input class="inp" id="v-cant" type="number" inputmode="numeric" min="1" value="1" onfocus="this.select()" oninput="calcSub()">
-        </div>
-        <div class="field">
-          <label class="field-label">Precio Unit. (COP)</label>
-          <input class="inp" id="v-precio" type="number" inputmode="numeric" min="0" value="0" onfocus="this.select()" oninput="calcSub()">
-        </div>
+        <div class="field"><label class="field-label">Cantidad</label><input class="inp" id="v-cant" type="number" inputmode="numeric" min="1" value="1" onfocus="this.select()" oninput="calcSub()"></div>
+        <div class="field"><label class="field-label">Precio Unit. (COP)</label><input class="inp" id="v-precio" type="number" inputmode="numeric" min="0" value="0" onfocus="this.select()" oninput="calcSub()"></div>
       </div>
       <div class="info-row" style="background:white;margin-bottom:0;">
-        <span>Subtotal:</span>
-        <strong id="v-sub" style="margin-left:auto;">$ 0</strong>
+        <span>Subtotal:</span><strong id="v-sub" style="margin-left:auto;">$ 0</strong>
       </div>
       <button type="button" class="btn-add" onclick="addItem()">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
         Agregar a la lista
       </button>
     </div>
-
     <div class="divider">Productos en este turno</div>
     <div id="item-list" class="item-list"></div>
-
     <div class="totals-bar">
-      <div>
-        <div class="totals-lbl">Total Venta</div>
-        <div class="totals-meta" id="v-count">0 items</div>
-      </div>
+      <div><div class="totals-lbl">Total Venta</div><div class="totals-meta" id="v-count">0 items</div></div>
       <div class="totals-val" id="v-total">$ 0</div>
     </div>
   </div>
@@ -404,180 +416,313 @@
 <form id="form-voz" style="display:none" onsubmit="submitVoz(event)">
 
   <div class="info-row">
-    <span>📋 Turno: <strong id="vz-info-code">—</strong></span>
-    <span>·</span>
+    <span>📋 Turno: <strong id="vz-info-code">—</strong></span><span>·</span>
     <span>🏪 <strong id="vz-info-pdv">—</strong></span>
   </div>
 
-  <!-- FASE 1 -->
-  <div class="acc-section">
-    <div class="acc-header" onclick="toggleAcc(1)">
-      <div class="acc-header-left">
-        <div class="acc-num">1</div>
-        <div>
-          <div class="acc-title">Identificación del Establecimiento</div>
-          <div class="acc-sub">Datos básicos del PDV</div>
-        </div>
-      </div>
-      <span class="acc-chev open" id="chev-1">▾</span>
+  <div class="vz-progress">
+    <div class="vz-progress-track"><div class="vz-progress-fill" id="vz-fill"></div></div>
+    <div class="vz-progress-meta">
+      <span class="vz-progress-label">Encuesta del consumidor</span>
+      <span class="vz-progress-pct"><span id="vz-done">0</span> / 23</span>
     </div>
-    <div class="acc-body open" id="body-1">
-      <div class="field"><label class="field-label">Razón Social</label><input class="inp" id="vz-razon"></div>
-      <div class="row-2">
-        <div class="field"><label class="field-label">NIT / Cédula</label><input class="inp" id="vz-nit"></div>
-        <div class="field"><label class="field-label">Representante Legal</label><input class="inp" id="vz-rep"></div>
+  </div>
+
+  <!-- ═══ SECCIÓN 1: SOBRE TI ═══ -->
+  <div class="vz-section">
+    <div class="vz-section-head">
+      <div class="vz-section-icon si-demo">👤</div>
+      <div>
+        <div class="vz-section-title">Sobre Ti</div>
+        <div class="vz-section-sub">Datos demográficos básicos</div>
       </div>
-      <div class="row-2">
-        <div class="field"><label class="field-label">Localidad / Municipio</label><input class="inp" id="vz-localidad"></div>
-        <div class="field"><label class="field-label">Barrio</label><input class="inp" id="vz-barrio"></div>
+    </div>
+
+    <div class="vz-q">
+      <div class="vz-q-head"><span class="vz-q-num">1</span><span class="vz-q-icon">🎂</span><span class="vz-q-text">¿Cuál es tu edad? <span class="req">*</span></span></div>
+      <div class="chip-grid" data-key="edad">
+        <button type="button" class="chip" data-val="18-24" onclick="onChip(this)">18 – 24</button>
+        <button type="button" class="chip" data-val="25-34" onclick="onChip(this)">25 – 34</button>
+        <button type="button" class="chip" data-val="35-44" onclick="onChip(this)">35 – 44</button>
+        <button type="button" class="chip" data-val="45+"   onclick="onChip(this)">45 o más</button>
       </div>
-      <div class="field"><label class="field-label">Ubicación Geográfica</label><input class="inp" id="vz-ubicacion" placeholder="Ej: Norte, Sur, Centro..."></div>
-      <div class="field"><label class="field-label">Dirección de Entrega</label><input class="inp" id="vz-dir"></div>
-      <div class="row-2">
-        <div class="field"><label class="field-label">Contacto Principal</label><input class="inp" id="vz-contacto" type="tel"></div>
-        <div class="field"><label class="field-label">Correo Electrónico</label><input class="inp" id="vz-correo" type="email"></div>
+    </div>
+
+    <div class="vz-q">
+      <div class="vz-q-head"><span class="vz-q-num">2</span><span class="vz-q-icon">⚧</span><span class="vz-q-text">Género <span class="req">*</span></span></div>
+      <div class="chip-grid" data-key="genero">
+        <button type="button" class="chip" data-val="Masculino"            onclick="onChip(this)">👨 Masculino</button>
+        <button type="button" class="chip" data-val="Femenino"             onclick="onChip(this)">👩 Femenino</button>
+        <button type="button" class="chip" data-val="Prefiero no decirlo"  onclick="onChip(this)">🤐 Prefiero no decirlo</button>
       </div>
     </div>
   </div>
 
-  <!-- FASE 2 -->
-  <div class="acc-section">
-    <div class="acc-header" onclick="toggleAcc(2)">
-      <div class="acc-header-left">
-        <div class="acc-num">2</div>
-        <div>
-          <div class="acc-title">Comportamiento de Compra</div>
-          <div class="acc-sub">Cómo y cuándo compra</div>
-        </div>
+  <!-- ═══ SECCIÓN 2: HÁBITOS ═══ -->
+  <div class="vz-section">
+    <div class="vz-section-head">
+      <div class="vz-section-icon si-habits">🥃</div>
+      <div>
+        <div class="vz-section-title">Tus Hábitos de Consumo</div>
+        <div class="vz-section-sub">Cómo, cuándo y dónde</div>
       </div>
-      <span class="acc-chev" id="chev-2">▾</span>
     </div>
-    <div class="acc-body" id="body-2">
-      <div class="field">
-        <label class="field-label">Categoría del Establecimiento</label>
-        <div class="sel-wrap"><select class="sel" id="vz-cat">
-          <option value="">Selecciona</option>
-          <option>Estanco</option><option>Licorera</option><option>Tienda de Barrio</option>
-          <option>Mini Mercado</option><option>Bar / Discoteca</option><option>Restaurante</option>
-          <option>Hotel</option><option>Casino</option><option>Mayorista</option><option>Otro</option>
-        </select></div>
+
+    <div class="vz-q">
+      <div class="vz-q-head"><span class="vz-q-num">3</span><span class="vz-q-icon">📅</span><span class="vz-q-text">¿Con qué frecuencia consumes licor? <span class="req">*</span></span></div>
+      <div class="chip-grid" data-key="frecuencia">
+        <button type="button" class="chip" data-val="Cada semana"      onclick="onChip(this)">📆 Cada semana</button>
+        <button type="button" class="chip" data-val="2-3 veces al mes" onclick="onChip(this)">2 – 3 / mes</button>
+        <button type="button" class="chip" data-val="1 vez al mes"     onclick="onChip(this)">1 vez / mes</button>
+        <button type="button" class="chip" data-val="Ocasionalmente"   onclick="onChip(this)">Ocasionalmente</button>
       </div>
-      <div class="field">
-        <label class="field-label">Tipo de Cliente</label>
-        <div class="sel-wrap"><select class="sel" id="vz-tipo">
-          <option value="">Selecciona</option>
-          <option>Cliente Frecuente</option><option>Cliente Ocasional</option>
-          <option>Cliente Nuevo</option><option>Cliente Premium</option>
-        </select></div>
+    </div>
+
+    <div class="vz-q">
+      <div class="vz-q-head"><span class="vz-q-num">4</span><span class="vz-q-icon">🍾</span><span class="vz-q-text">¿Qué tipo de licor consumes con mayor frecuencia? <span class="req">*</span></span></div>
+      <div class="chip-grid" data-key="tipo_licor" data-other="tipo_licor_otro">
+        <button type="button" class="chip" data-val="Vodka"   onclick="onChip(this)">🍸 Vodka</button>
+        <button type="button" class="chip" data-val="Whisky"  onclick="onChip(this)">🥃 Whisky</button>
+        <button type="button" class="chip" data-val="Vino"    onclick="onChip(this)">🍷 Vino</button>
+        <button type="button" class="chip" data-val="Tequila" onclick="onChip(this)">🌵 Tequila</button>
+        <button type="button" class="chip" data-val="Otro"    onclick="onChip(this)">✏️ Otro</button>
       </div>
-      <div class="row-2">
-        <div class="field">
-          <label class="field-label">Frecuencia de Compra</label>
-          <div class="sel-wrap"><select class="sel" id="vz-frec">
-            <option value="">Selecciona</option>
-            <option>Diaria</option><option>Semanal</option><option>Quincenal</option>
-            <option>Mensual</option><option>Esporádica</option>
-          </select></div>
-        </div>
-        <div class="field">
-          <label class="field-label">Método de Pago</label>
-          <div class="sel-wrap"><select class="sel" id="vz-pago">
-            <option value="">Selecciona</option>
-            <option>Efectivo</option><option>Transferencia</option><option>Crédito 30 días</option>
-            <option>Tarjeta</option><option>Mixto</option>
-          </select></div>
+      <div class="other-input" id="other-tipo_licor_otro">
+        <input class="inp" placeholder="Especifica el licor..." oninput="vozState.tipo_licor_otro = this.value; updateProgress();">
+      </div>
+    </div>
+
+    <div class="vz-q">
+      <div class="vz-q-head"><span class="vz-q-num">5</span><span class="vz-q-icon">🛒</span><span class="vz-q-text">¿Dónde compras usualmente tu licor? <span class="req">*</span></span></div>
+      <div class="chip-grid" data-key="lugar_compra">
+        <button type="button" class="chip" data-val="Supermercado / Droguería"  onclick="onChip(this)">🏬 Supermercado / Droguería</button>
+        <button type="button" class="chip" data-val="Tienda de barrio"          onclick="onChip(this)">🏪 Tienda de barrio</button>
+        <button type="button" class="chip" data-val="Licorera especializada"    onclick="onChip(this)">🍾 Licorera especializada</button>
+        <button type="button" class="chip" data-val="App / Domicilio"           onclick="onChip(this)">📱 App / Domicilio</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SECCIÓN 3: MARCAS ═══ -->
+  <div class="vz-section">
+    <div class="vz-section-head">
+      <div class="vz-section-icon si-brands">🏷️</div>
+      <div>
+        <div class="vz-section-title">Conocimiento de Marcas</div>
+        <div class="vz-section-sub">Tu relación con cada una</div>
+      </div>
+    </div>
+
+    <div class="vz-q">
+      <div class="vz-q-head"><span class="vz-q-num">6</span><span class="vz-q-icon">👀</span><span class="vz-q-text">¿Cuáles de estas marcas conoces? <span class="req">*</span></span></div>
+      <div class="vz-q-hint" style="padding-left:0;">Puedes seleccionar varias</div>
+      <div class="chip-grid" data-key="marcas_conocidas" data-multi="true">
+        <button type="button" class="chip chip-multi" data-val="Smirnoff"  onclick="onChip(this)">Smirnoff</button>
+        <button type="button" class="chip chip-multi" data-val="Old Parr"  onclick="onChip(this)">Old Parr</button>
+        <button type="button" class="chip chip-multi" data-val="Buchanans" onclick="onChip(this)">Buchanans</button>
+      </div>
+    </div>
+
+    <div class="vz-q">
+      <div class="vz-q-head"><span class="vz-q-num">7</span><span class="vz-q-icon">⭐</span><span class="vz-q-text">¿Cuál compras con mayor frecuencia? <span class="req">*</span></span></div>
+      <div class="chip-grid" data-key="marca_frecuente">
+        <button type="button" class="chip" data-val="Buchanans" onclick="onChip(this)">Buchanans</button>
+        <button type="button" class="chip" data-val="Smirnoff"  onclick="onChip(this)">Smirnoff</button>
+        <button type="button" class="chip" data-val="Old Parr"  onclick="onChip(this)">Old Parr</button>
+        <button type="button" class="chip" data-val="Ninguna"   onclick="onChip(this)">Ninguna</button>
+      </div>
+    </div>
+
+    <div class="vz-q">
+      <div class="vz-q-head"><span class="vz-q-num">8</span><span class="vz-q-icon">💭</span><span class="vz-q-text">¿Por qué eliges esa marca? <span class="req">*</span></span></div>
+      <textarea class="ta" id="vz-razon" placeholder="Cuéntanos brevemente la razón..." oninput="vozState.razon_marca = this.value; updateProgress();"></textarea>
+    </div>
+  </div>
+
+  <!-- ═══ SECCIÓN 4: SMIRNOFF ═══ -->
+  <div class="brand-card brand-smirnoff">
+    <div class="brand-bar"></div>
+    <div class="brand-head"><div class="brand-logo">SMIRNOFF</div><div class="brand-tag">Vodka</div></div>
+    <div class="brand-body">
+      <div class="vz-q">
+        <div class="vz-q-head"><span class="vz-q-num">9</span><span class="vz-q-icon">🔤</span><span class="vz-q-text">¿Qué palabra asocias con Smirnoff? <span class="req">*</span></span></div>
+        <div class="chip-grid" data-key="smirnoff_palabra">
+          <button type="button" class="chip" data-val="Juvenil"   onclick="onChip(this)">Juvenil</button>
+          <button type="button" class="chip" data-val="Accesible" onclick="onChip(this)">Accesible</button>
+          <button type="button" class="chip" data-val="Fiesta"    onclick="onChip(this)">Fiesta</button>
+          <button type="button" class="chip" data-val="Económica" onclick="onChip(this)">Económica</button>
+          <button type="button" class="chip" data-val="Premium"   onclick="onChip(this)">Premium</button>
         </div>
       </div>
-      <div class="row-2">
-        <div class="field">
-          <label class="field-label">Ticket Promedio (COP)</label>
-          <input class="inp" id="vz-ticket" type="number" inputmode="numeric" min="0">
-        </div>
-        <div class="field">
-          <label class="field-label">Días Preferidos Entrega</label>
-          <input class="inp" id="vz-dias" placeholder="Ej: Lun, Mié, Vie">
+      <div class="vz-q">
+        <div class="vz-q-head"><span class="vz-q-num">10</span><span class="vz-q-icon">👍</span><span class="vz-q-text">¿Recomendarías consumir Smirnoff? <span class="req">*</span></span></div>
+        <div class="chip-grid" data-key="smirnoff_recomienda">
+          <button type="button" class="chip" data-val="Sí"      onclick="onChip(this)">✅ Sí</button>
+          <button type="button" class="chip" data-val="No"      onclick="onChip(this)">❌ No</button>
+          <button type="button" class="chip" data-val="Tal vez" onclick="onChip(this)">🤔 Tal vez</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- FASE 3 -->
-  <div class="acc-section">
-    <div class="acc-header" onclick="toggleAcc(3)">
-      <div class="acc-header-left">
-        <div class="acc-num">3</div>
-        <div>
-          <div class="acc-title">Satisfacción y Feedback</div>
-          <div class="acc-sub">NPS y voz del cliente</div>
+  <!-- ═══ SECCIÓN 5: OLD PARR ═══ -->
+  <div class="brand-card brand-oldparr">
+    <div class="brand-bar"></div>
+    <div class="brand-head"><div class="brand-logo">OLD PARR</div><div class="brand-tag">Whisky</div></div>
+    <div class="brand-body">
+      <div class="vz-q">
+        <div class="vz-q-head"><span class="vz-q-num">11</span><span class="vz-q-icon">🔤</span><span class="vz-q-text">¿Qué palabra asocias con Old Parr? <span class="req">*</span></span></div>
+        <div class="chip-grid" data-key="oldparr_palabra">
+          <button type="button" class="chip" data-val="Tradicional"  onclick="onChip(this)">Tradicional</button>
+          <button type="button" class="chip" data-val="Elegante"     onclick="onChip(this)">Elegante</button>
+          <button type="button" class="chip" data-val="Fuerte"       onclick="onChip(this)">Fuerte</button>
+          <button type="button" class="chip" data-val="Para adultos" onclick="onChip(this)">Para adultos</button>
+          <button type="button" class="chip" data-val="Premium"      onclick="onChip(this)">Premium</button>
         </div>
       </div>
-      <span class="acc-chev" id="chev-3">▾</span>
+      <div class="vz-q">
+        <div class="vz-q-head"><span class="vz-q-num">12</span><span class="vz-q-icon">👍</span><span class="vz-q-text">¿Recomendarías consumir Old Parr? <span class="req">*</span></span></div>
+        <div class="chip-grid" data-key="oldparr_recomienda">
+          <button type="button" class="chip" data-val="Sí"      onclick="onChip(this)">✅ Sí</button>
+          <button type="button" class="chip" data-val="No"      onclick="onChip(this)">❌ No</button>
+          <button type="button" class="chip" data-val="Tal vez" onclick="onChip(this)">🤔 Tal vez</button>
+        </div>
+      </div>
     </div>
-    <div class="acc-body" id="body-3">
-      <div class="field">
-        <label class="field-label">Satisfacción NPS (1 = mala · 5 = excelente)</label>
-        <div class="rating-grid" id="nps-grid">
-          <div class="rating-chip" data-val="1" onclick="setRating('nps',1)">1</div>
-          <div class="rating-chip" data-val="2" onclick="setRating('nps',2)">2</div>
-          <div class="rating-chip" data-val="3" onclick="setRating('nps',3)">3</div>
-          <div class="rating-chip" data-val="4" onclick="setRating('nps',4)">4</div>
-          <div class="rating-chip" data-val="5" onclick="setRating('nps',5)">5</div>
-        </div>
-        <input type="hidden" id="vz-nps">
-      </div>
-      <div class="field">
-        <label class="field-label">Calificación al Vendedor (1–5)</label>
-        <div class="rating-grid" id="cal-grid">
-          <div class="rating-chip" data-val="1" onclick="setRating('cal',1)">1</div>
-          <div class="rating-chip" data-val="2" onclick="setRating('cal',2)">2</div>
-          <div class="rating-chip" data-val="3" onclick="setRating('cal',3)">3</div>
-          <div class="rating-chip" data-val="4" onclick="setRating('cal',4)">4</div>
-          <div class="rating-chip" data-val="5" onclick="setRating('cal',5)">5</div>
-        </div>
-        <input type="hidden" id="vz-cal">
-      </div>
-      <div class="field">
-        <label class="field-label">Factor Determinante para Comprar</label>
-        <div class="sel-wrap"><select class="sel" id="vz-factor">
-          <option value="">Selecciona</option>
-          <option>Precio</option><option>Marca</option><option>Disponibilidad</option>
-          <option>Calidad</option><option>Servicio</option><option>Promociones</option>
-        </select></div>
-      </div>
-      <div class="field"><label class="field-label">Producto Faltante / Buscado</label><input class="inp" id="vz-falt" placeholder="¿Qué quisiera tener disponible?"></div>
-      <div class="field"><label class="field-label">Fortaleza vs Competencia</label><input class="inp" id="vz-fort" placeholder="¿Qué nos diferencia?"></div>
-      <div class="field">
-        <label class="field-label">¿Inconvenientes en pedidos?</label>
-        <div class="sel-wrap"><select class="sel" id="vz-inc">
-          <option value="">Selecciona</option><option>Sí</option><option>No</option>
-        </select></div>
-      </div>
-      <div class="field"><label class="field-label">Detalle de Inconvenientes</label><textarea class="ta" id="vz-incd" placeholder="Si aplica..."></textarea></div>
-      <div class="row-2">
-        <div class="field">
-          <label class="field-label">% Vitrina (marca)</label>
-          <input class="inp" id="vz-vit" type="number" inputmode="numeric" min="0" max="100" placeholder="0-100">
-        </div>
-        <div class="field">
-          <label class="field-label">Proveedor Principal</label>
-          <input class="inp" id="vz-prov">
+  </div>
+
+  <!-- ═══ SECCIÓN 6: BUCHANANS ═══ -->
+  <div class="brand-card brand-buchanans">
+    <div class="brand-bar"></div>
+    <div class="brand-head"><div class="brand-logo">BUCHANAN'S</div><div class="brand-tag">Whisky</div></div>
+    <div class="brand-body">
+      <div class="vz-q">
+        <div class="vz-q-head"><span class="vz-q-num">13</span><span class="vz-q-icon">🔤</span><span class="vz-q-text">¿Qué palabra asocias con Buchanan's? <span class="req">*</span></span></div>
+        <div class="chip-grid" data-key="buchanans_palabra">
+          <button type="button" class="chip" data-val="Exclusiva"   onclick="onChip(this)">Exclusiva</button>
+          <button type="button" class="chip" data-val="Estatus"     onclick="onChip(this)">Estatus</button>
+          <button type="button" class="chip" data-val="Suave"       onclick="onChip(this)">Suave</button>
+          <button type="button" class="chip" data-val="Premium"     onclick="onChip(this)">Premium</button>
+          <button type="button" class="chip" data-val="Celebración" onclick="onChip(this)">Celebración</button>
         </div>
       </div>
-      <div class="field">
-        <label class="field-label">Espacio Material Publicitario</label>
-        <div class="sel-wrap"><select class="sel" id="vz-pub">
-          <option value="">Selecciona</option>
-          <option>Disponible amplio</option><option>Disponible limitado</option>
-          <option>No disponible</option><option>Negociable</option>
-        </select></div>
+      <div class="vz-q">
+        <div class="vz-q-head"><span class="vz-q-num">14</span><span class="vz-q-icon">👍</span><span class="vz-q-text">¿Recomendarías consumir Buchanan's? <span class="req">*</span></span></div>
+        <div class="chip-grid" data-key="buchanans_recomienda">
+          <button type="button" class="chip" data-val="Sí"      onclick="onChip(this)">✅ Sí</button>
+          <button type="button" class="chip" data-val="No"      onclick="onChip(this)">❌ No</button>
+          <button type="button" class="chip" data-val="Tal vez" onclick="onChip(this)">🤔 Tal vez</button>
+        </div>
       </div>
-      <div class="field">
-        <label class="field-label">Aceptación de Promociones</label>
-        <div class="sel-wrap"><select class="sel" id="vz-acep">
-          <option value="">Selecciona</option>
-          <option>Alta</option><option>Media</option><option>Baja</option><option>No le interesan</option>
-        </select></div>
+    </div>
+  </div>
+
+  <!-- ═══ SECCIÓN 7: VINOS MEICO ═══ -->
+  <div class="brand-card brand-meico">
+    <div class="brand-bar"></div>
+    <div class="brand-head"><div class="brand-logo">VINOS MEICO</div><div class="brand-tag">Vino</div></div>
+    <div class="brand-body">
+      <div class="vz-q">
+        <div class="vz-q-head"><span class="vz-q-num">15</span><span class="vz-q-icon">🍷</span><span class="vz-q-text">¿Eres consumidor de vino? <span class="req">*</span></span></div>
+        <div class="chip-grid" data-key="consume_vino">
+          <button type="button" class="chip" data-val="Sí" onclick="onChip(this);toggleVino()">✅ Sí</button>
+          <button type="button" class="chip" data-val="No" onclick="onChip(this);toggleVino()">❌ No</button>
+        </div>
       </div>
+
+      <div class="vz-vino-conditional" id="vino-block">
+        <div class="vz-q">
+          <div class="vz-q-head"><span class="vz-q-num">16</span><span class="vz-q-icon">👥</span><span class="vz-q-text">¿Con quién suele compartir una botella de vino? <span class="req">*</span></span></div>
+          <div class="chip-grid" data-key="comparte_vino">
+            <button type="button" class="chip" data-val="Pareja"           onclick="onChip(this)">💑 Pareja</button>
+            <button type="button" class="chip" data-val="Amigos"           onclick="onChip(this)">👫 Amigos</button>
+            <button type="button" class="chip" data-val="Familia"          onclick="onChip(this)">👨‍👩‍👧 Familia</button>
+            <button type="button" class="chip" data-val="Solo"             onclick="onChip(this)">🧘 Solo</button>
+            <button type="button" class="chip" data-val="No consume"       onclick="onChip(this)">No consume</button>
+          </div>
+        </div>
+
+        <div class="vz-q">
+          <div class="vz-q-head"><span class="vz-q-num">17</span><span class="vz-q-icon">🥂</span><span class="vz-q-text">¿En qué momento elige tomar vino? <span class="req">*</span></span></div>
+          <div class="vz-q-hint" style="padding-left:0;">Puedes seleccionar varias</div>
+          <div class="chip-grid" data-key="momentos_vino" data-multi="true" data-other="momentos_vino_otro">
+            <button type="button" class="chip chip-multi" data-val="Buena comida"        onclick="onChip(this)">🍽 Con buena comida</button>
+            <button type="button" class="chip chip-multi" data-val="Cena romántica"      onclick="onChip(this)">🌹 Cena romántica</button>
+            <button type="button" class="chip chip-multi" data-val="Reunión con amigos"  onclick="onChip(this)">🎉 Con amigos</button>
+            <button type="button" class="chip chip-multi" data-val="Evento familiar"     onclick="onChip(this)">👨‍👩‍👧 Evento familiar</button>
+            <button type="button" class="chip chip-multi" data-val="Relax post-trabajo"  onclick="onChip(this)">😌 Relax</button>
+            <button type="button" class="chip chip-multi" data-val="Celebraciones"       onclick="onChip(this)">🥂 Celebraciones</button>
+            <button type="button" class="chip chip-multi" data-val="Otro"                onclick="onChip(this)">✏️ Otro</button>
+          </div>
+          <div class="other-input" id="other-momentos_vino_otro">
+            <input class="inp" placeholder="Especifica..." oninput="vozState.momentos_vino_otro = this.value; updateProgress();">
+          </div>
+        </div>
+
+        <div class="vz-q">
+          <div class="vz-q-head"><span class="vz-q-num">18</span><span class="vz-q-icon">🍇</span><span class="vz-q-text">¿Cuál tipo de vino prefiere? <span class="req">*</span></span></div>
+          <div class="chip-grid" data-key="tipo_vino">
+            <button type="button" class="chip" data-val="Tinto"             onclick="onChip(this)">🍷 Tinto</button>
+            <button type="button" class="chip" data-val="Rosé"              onclick="onChip(this)">🌸 Rosé</button>
+            <button type="button" class="chip" data-val="Blanco"            onclick="onChip(this)">⚪ Blanco</button>
+            <button type="button" class="chip" data-val="Espumoso"          onclick="onChip(this)">🥂 Espumoso</button>
+            <button type="button" class="chip" data-val="No tiene preferencia" onclick="onChip(this)">Sin preferencia</button>
+          </div>
+        </div>
+
+        <div class="vz-q">
+          <div class="vz-q-head"><span class="vz-q-num">19</span><span class="vz-q-icon">✨</span><span class="vz-q-text">¿Qué factores ganan tu confianza al elegir un buen vino? <span class="req">*</span></span></div>
+          <div class="chip-grid" data-key="factor_vino" data-other="factor_vino_otro">
+            <button type="button" class="chip" data-val="Calidad"                  onclick="onChip(this)">🏆 Calidad</button>
+            <button type="button" class="chip" data-val="Origen"                   onclick="onChip(this)">🌍 Origen</button>
+            <button type="button" class="chip" data-val="Innovación"               onclick="onChip(this)">💡 Innovación</button>
+            <button type="button" class="chip" data-val="Relación calidad-precio"  onclick="onChip(this)">⚖️ Calidad-precio</button>
+            <button type="button" class="chip" data-val="Otro"                     onclick="onChip(this)">✏️ Otro</button>
+          </div>
+          <div class="other-input" id="other-factor_vino_otro">
+            <input class="inp" placeholder="Especifica..." oninput="vozState.factor_vino_otro = this.value; updateProgress();">
+          </div>
+        </div>
+
+        <div class="vz-q">
+          <div class="vz-q-head"><span class="vz-q-num">20</span><span class="vz-q-icon">🍾</span><span class="vz-q-text">¿Cuál es tu marca de vino preferida? <span class="req">*</span></span></div>
+          <input class="inp" id="vz-marca-vino" placeholder="Escribe la marca..." oninput="vozState.marca_vino = this.value; updateProgress();">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SECCIÓN 8: CIERRE ═══ -->
+  <div class="vz-section">
+    <div class="vz-section-head">
+      <div class="vz-section-icon si-close">🎁</div>
+      <div>
+        <div class="vz-section-title">Cierre</div>
+        <div class="vz-section-sub">Para terminar</div>
+      </div>
+    </div>
+
+    <div class="vz-q">
+      <div class="vz-q-head"><span class="vz-q-num">21</span><span class="vz-q-icon">🎯</span><span class="vz-q-text">¿Qué incentivo te motiva más a comprar? <span class="req">*</span></span></div>
+      <div class="chip-grid" data-key="incentivo">
+        <button type="button" class="chip" data-val="Descuentos"   onclick="onChip(this)">💸 Descuentos</button>
+        <button type="button" class="chip" data-val="Degustación"  onclick="onChip(this)">🍷 Degustación</button>
+        <button type="button" class="chip" data-val="Obsequios"    onclick="onChip(this)">🎁 Obsequios</button>
+        <button type="button" class="chip" data-val="Experiencia"  onclick="onChip(this)">🎵 Experiencia (foto, DJ, dinámicas)</button>
+      </div>
+    </div>
+
+    <div class="vz-q">
+      <div class="vz-q-head"><span class="vz-q-num">22</span><span class="vz-q-icon">🤔</span><span class="vz-q-text">¿Consideró comprar otra marca antes de decidir? <span class="req">*</span></span></div>
+      <div class="chip-grid" data-key="considero_otra">
+        <button type="button" class="chip" data-val="Sí" onclick="onChip(this)">✅ Sí</button>
+        <button type="button" class="chip" data-val="No" onclick="onChip(this)">❌ No</button>
+      </div>
+    </div>
+
+    <div class="vz-q">
+      <div class="vz-q-head"><span class="vz-q-num">23</span><span class="vz-q-icon">💬</span><span class="vz-q-text">¿Qué recomiendas a la marca para incentivar la compra? <span class="req">*</span></span></div>
+      <textarea class="ta" id="vz-recomendacion" placeholder="Tu recomendación..." oninput="vozState.recomendacion = this.value; updateProgress();"></textarea>
     </div>
   </div>
 
@@ -585,15 +730,13 @@
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M22 2L15 22l-4-9-9-4 20-7z" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg>
     Enviar Voz Consumidor
   </button>
-  <button type="button" class="btn-reset" onclick="resetForm('voz')">↺ Reiniciar</button>
+  <button type="button" class="btn-reset" onclick="resetForm('voz')">↺ Reiniciar encuesta</button>
 </form>
 
 <!-- ████████ FORM SALIDA ████████ -->
 <form id="form-salida" style="display:none" onsubmit="submitSalida(event)">
-
   <div class="info-row">
-    <span>📋 Turno: <strong id="s-info-code">—</strong></span>
-    <span>·</span>
+    <span>📋 Turno: <strong id="s-info-code">—</strong></span><span>·</span>
     <span>🏪 <strong id="s-info-pdv">—</strong></span>
   </div>
 
@@ -603,13 +746,11 @@
       Foto de Salida
     </div>
     <label class="foto-box" id="s-foto-box" for="s-foto-input">
-      <div class="foto-content" id="s-foto-content">
-        <div class="foto-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2v11z" stroke="white" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="13" r="4" stroke="white" stroke-width="2"/></svg>
-        </div>
-        <div class="foto-text">Foto de cierre del PDV</div>
-        <div class="foto-hint">Para registrar el estado al final del turno</div>
+      <div class="foto-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2v11z" stroke="white" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="13" r="4" stroke="white" stroke-width="2"/></svg>
       </div>
+      <div class="foto-text">Foto de cierre del PDV</div>
+      <div class="foto-hint">Para registrar el estado al final</div>
       <input type="file" id="s-foto-input" class="foto-input" accept="image/*" capture="environment" onchange="onFotoChange(event,'s')">
     </label>
     <div id="s-loc"></div>
@@ -620,10 +761,7 @@
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="var(--wine)" stroke-width="2" stroke-linecap="round"/></svg>
       Total Venta del Turno
     </div>
-    <div class="field">
-      <label class="field-label">Total vendido (COP)</label>
-      <input class="inp" id="s-total" type="number" inputmode="numeric" min="0" value="0" onfocus="this.select()">
-    </div>
+    <div class="field"><label class="field-label">Total vendido (COP)</label><input class="inp" id="s-total" type="number" inputmode="numeric" min="0" value="0" onfocus="this.select()"></div>
   </div>
 
   <div class="card">
@@ -631,7 +769,7 @@
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="var(--wine)" stroke-width="2" stroke-linejoin="round"/><path d="M14 2v6h6" stroke="var(--wine)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       Observación Final
     </div>
-    <textarea class="ta" id="s-obs" placeholder="Resumen del día, novedades, incidentes, recomendaciones..."></textarea>
+    <textarea class="ta" id="s-obs" placeholder="Resumen del día, novedades..."></textarea>
   </div>
 
   <button class="btn-primary" type="submit" id="btn-salida">
@@ -666,30 +804,43 @@
 
 <script>
 /* ══════════════════════════════════════════════════════════
-   CONFIG — actualiza estos dos valores
+   ⚙ CONFIG — pega aquí la URL de tu Web App de Apps Script
    ══════════════════════════════════════════════════════════ */
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx3mupF6eko2J87QPPQAaKbvrA6AXGMIVPZuqOjQffYR0vOxAFcmwZT5wx5uI1zd_zn/exec';
-const DATA_SHEET_ID   = '1WgMalVxt5AzaO1tmcY3P-A33LeyyNzG53djej0FUQxA'; // sheet de listas
+const DATA_SHEET_ID   = '1WgMalVxt5AzaO1tmcY3P-A33LeyyNzG53djej0FUQxA';
 
 /* ══════════════════════════════════════════════════════════
-   ESTADO GLOBAL
+   ESTADO
    ══════════════════════════════════════════════════════════ */
 let DATA = { users: [], cities: [], cityPdvs: {}, skus: [] };
-let currentTurn = null;        // {code, pdv, ciudad, campana, usuario}
+let currentTurn = null;
 let userLoc = null;
 let curReport = '';
 let curCode = '';
 let ventaItems = [];
-let curFotoIngreso = null;     // {b64, name, mime}
+let curFotoIngreso = null;
 let curFotoSalida = null;
-let ratings = { nps: 0, cal: 0 };
+
+// Estado completo de la encuesta Voz Consumidor
+let vozState = {
+  edad:'', genero:'',
+  frecuencia:'', tipo_licor:'', tipo_licor_otro:'', lugar_compra:'',
+  marcas_conocidas:[], marca_frecuente:'', razon_marca:'',
+  smirnoff_palabra:'', smirnoff_recomienda:'',
+  oldparr_palabra:'',  oldparr_recomienda:'',
+  buchanans_palabra:'',buchanans_recomienda:'',
+  consume_vino:'', comparte_vino:'',
+  momentos_vino:[], momentos_vino_otro:'',
+  tipo_vino:'', factor_vino:'', factor_vino_otro:'', marca_vino:'',
+  incentivo:'', considero_otra:'', recomendacion:''
+};
 
 /* ══════════════════════════════════════════════════════════
-   PERSISTENCIA — localStorage
+   PERSISTENCIA TURNO
    ══════════════════════════════════════════════════════════ */
-function saveTurn(t) { try { localStorage.setItem('turn_licores', JSON.stringify(t)); } catch(_){} renderTurnBadge(); }
-function loadTurn()  { try { const s = localStorage.getItem('turn_licores'); if (s) currentTurn = JSON.parse(s); } catch(_){} renderTurnBadge(); }
-function clearTurn() { try { localStorage.removeItem('turn_licores'); } catch(_){} currentTurn = null; renderTurnBadge(); }
+function saveTurn(t) { try{localStorage.setItem('turn_licores',JSON.stringify(t));}catch(_){} renderTurnBadge(); }
+function loadTurn()  { try{const s=localStorage.getItem('turn_licores'); if(s) currentTurn=JSON.parse(s);}catch(_){} renderTurnBadge(); }
+function clearTurn() { try{localStorage.removeItem('turn_licores');}catch(_){} currentTurn=null; renderTurnBadge(); }
 
 function renderTurnBadge() {
   const b = document.getElementById('turn-badge');
@@ -697,10 +848,8 @@ function renderTurnBadge() {
     b.classList.add('active');
     document.getElementById('turn-code').textContent = currentTurn.code;
     document.getElementById('turn-pdv').textContent  = currentTurn.pdv || '—';
-    // refrescar info-rows en tabs
     ['v','vz','s'].forEach(p => {
-      const c = document.getElementById(`${p}-info-code`);
-      const v = document.getElementById(`${p}-info-pdv`);
+      const c=document.getElementById(`${p}-info-code`), v=document.getElementById(`${p}-info-pdv`);
       if (c) c.textContent = currentTurn.code;
       if (v) v.textContent = currentTurn.pdv || '—';
     });
@@ -711,140 +860,108 @@ function renderTurnBadge() {
 
 function endTurn() {
   if (!confirm('¿Cerrar el turno actual? Se borrará el código guardado en este dispositivo.')) return;
-  clearTurn();
-  ventaItems = [];
-  renderItems();
+  clearTurn(); ventaItems = []; renderItems();
 }
 
 /* ══════════════════════════════════════════════════════════
-   CARGA DE DATOS — gviz directo al sheet de listas
+   CARGA gviz (sheet de datos)
    ══════════════════════════════════════════════════════════ */
-function gvizUrl(sheetName) {
-  return `https://docs.google.com/spreadsheets/d/${DATA_SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(sheetName)}`;
-}
+function gvizUrl(sheetName){return `https://docs.google.com/spreadsheets/d/${DATA_SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(sheetName)}`;}
 
 async function loadAllData() {
-  await Promise.all([loadUsuarios(), loadPdv(), loadSku()]);
-  fillCampanas();
-  fillCities();
-  fillSkus();
+  await Promise.all([loadUsuarios(),loadPdv(),loadSku()]);
+  fillCampanas(); fillCities(); fillSkus();
 }
 
 async function loadUsuarios() {
-  try {
-    const r   = await fetch(gvizUrl('usuarios'));
-    const txt = await r.text();
-    const json = JSON.parse(txt.substring(47).slice(0,-2));
-    const rows = json.table.rows || [];
-    DATA.users = rows.map(row => ({
-      campana:  (row.c[0] && row.c[0].v ? String(row.c[0].v) : '').trim(),
-      usuario:  (row.c[1] && row.c[1].v ? String(row.c[1].v) : '').trim(),
-      cedula:   (row.c[2] && row.c[2].v != null ? String(row.c[2].v) : '').trim(),
-      contacto: (row.c[3] && row.c[3].v != null ? String(row.c[3].v) : '').trim()
-    })).filter(u => u.campana || u.usuario);
-  } catch(e) { console.warn('loadUsuarios', e); DATA.users = []; }
+  try{
+    const r=await fetch(gvizUrl('usuarios')); const txt=await r.text();
+    const json=JSON.parse(txt.substring(47).slice(0,-2));
+    DATA.users=(json.table.rows||[]).map(row=>({
+      campana: cellStr(row.c[0]), usuario: cellStr(row.c[1]),
+      cedula:  cellStr(row.c[2]), contacto:cellStr(row.c[3])
+    })).filter(u=>u.campana||u.usuario);
+  }catch(e){console.warn('loadUsuarios',e);DATA.users=[];}
 }
 
 async function loadPdv() {
-  try {
-    const r   = await fetch(gvizUrl('PDV'));
-    const txt = await r.text();
-    const json = JSON.parse(txt.substring(47).slice(0,-2));
-    const rows = json.table.rows || [];
-    const byCity = {};
-    rows.forEach(row => {
-      const ciudad = (row.c[0] && row.c[0].v ? String(row.c[0].v) : '').trim();
-      const pdv    = (row.c[1] && row.c[1].v ? String(row.c[1].v) : '').trim();
-      if (!pdv) return;
-      const key = ciudad || 'Sin ciudad';
-      if (!byCity[key]) byCity[key] = [];
+  try{
+    const r=await fetch(gvizUrl('PDV')); const txt=await r.text();
+    const json=JSON.parse(txt.substring(47).slice(0,-2));
+    const byCity={};
+    (json.table.rows||[]).forEach(row=>{
+      const ciudad=cellStr(row.c[0]); const pdv=cellStr(row.c[1]);
+      if(!pdv) return;
+      const key=ciudad||'Sin ciudad';
+      if(!byCity[key]) byCity[key]=[];
       byCity[key].push(pdv);
     });
-    Object.keys(byCity).forEach(c => byCity[c] = [...new Set(byCity[c])].sort());
-    DATA.cities   = Object.keys(byCity).sort();
-    DATA.cityPdvs = byCity;
-  } catch(e) { console.warn('loadPdv', e); DATA.cities = []; DATA.cityPdvs = {}; }
+    Object.keys(byCity).forEach(c=>byCity[c]=[...new Set(byCity[c])].sort());
+    DATA.cities=Object.keys(byCity).sort(); DATA.cityPdvs=byCity;
+  }catch(e){console.warn('loadPdv',e);DATA.cities=[];DATA.cityPdvs={};}
 }
 
 async function loadSku() {
-  try {
-    const r   = await fetch(gvizUrl('SKU'));
-    const txt = await r.text();
-    const json = JSON.parse(txt.substring(47).slice(0,-2));
-    const rows = json.table.rows || [];
-    DATA.skus = rows.map(row => ({
-      nombre: (row.c[0] && row.c[0].v ? String(row.c[0].v) : '').trim(),
-      marca:  (row.c[1] && row.c[1].v ? String(row.c[1].v) : '').trim(),
-      tipo:   (row.c[2] && row.c[2].v ? String(row.c[2].v) : '').trim(),
-      precio: (row.c[3] && row.c[3].v != null ? Number(row.c[3].v) : 0)
-    })).filter(s => s.nombre);
-  } catch(e) { console.warn('loadSku', e); DATA.skus = []; }
+  try{
+    const r=await fetch(gvizUrl('SKU')); const txt=await r.text();
+    const json=JSON.parse(txt.substring(47).slice(0,-2));
+    DATA.skus=(json.table.rows||[]).map(row=>({
+      nombre: cellStr(row.c[0]), marca: cellStr(row.c[1]),
+      tipo:   cellStr(row.c[2]), precio: cellNum(row.c[3])
+    })).filter(s=>s.nombre);
+  }catch(e){console.warn('loadSku',e);DATA.skus=[];}
 }
 
-/* ══════════════════════════════════════════════════════════
-   POBLAR SELECTS
-   ══════════════════════════════════════════════════════════ */
+function cellStr(c){return (c && c.v != null) ? String(c.v).trim() : '';}
+function cellNum(c){return (c && c.v != null) ? Number(c.v) : 0;}
+
 function fillCampanas() {
-  const sel = document.getElementById('i-campana');
-  const camps = [...new Set(DATA.users.map(u => u.campana).filter(Boolean))].sort();
+  const sel=document.getElementById('i-campana');
+  const camps=[...new Set(DATA.users.map(u=>u.campana).filter(Boolean))].sort();
   sel.classList.remove('loading');
-  sel.innerHTML = '<option value="">Selecciona campaña</option>' +
-    camps.map(c => `<option value="${esc(c)}">${esc(c)}</option>`).join('');
-  if (camps.length === 1) { sel.value = camps[0]; onCampana(); }
+  sel.innerHTML='<option value="">Selecciona campaña</option>'+camps.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');
+  if(camps.length===1){sel.value=camps[0]; onCampana();}
 }
 
 function onCampana() {
-  const camp = document.getElementById('i-campana').value;
-  const sel  = document.getElementById('i-usuario');
-  const list = DATA.users.filter(u => u.campana === camp);
-  sel.innerHTML = '<option value="">Selecciona usuario</option>' +
-    list.map(u => `<option value="${esc(u.usuario)}">${esc(u.usuario)}</option>`).join('');
-  document.getElementById('i-cedula').value = '';
-  document.getElementById('i-contacto').value = '';
+  const camp=document.getElementById('i-campana').value;
+  const sel=document.getElementById('i-usuario');
+  const list=DATA.users.filter(u=>u.campana===camp);
+  sel.innerHTML='<option value="">Selecciona usuario</option>'+list.map(u=>`<option value="${esc(u.usuario)}">${esc(u.usuario)}</option>`).join('');
+  document.getElementById('i-cedula').value=''; document.getElementById('i-contacto').value='';
 }
 
 function onUsuario() {
-  const camp = document.getElementById('i-campana').value;
-  const usr  = document.getElementById('i-usuario').value;
-  const u = DATA.users.find(x => x.campana === camp && x.usuario === usr);
-  document.getElementById('i-cedula').value   = u ? u.cedula : '';
-  document.getElementById('i-contacto').value = u ? u.contacto : '';
+  const camp=document.getElementById('i-campana').value;
+  const usr=document.getElementById('i-usuario').value;
+  const u=DATA.users.find(x=>x.campana===camp&&x.usuario===usr);
+  document.getElementById('i-cedula').value  =u?u.cedula:'';
+  document.getElementById('i-contacto').value=u?u.contacto:'';
 }
 
 function fillCities() {
-  const sel = document.getElementById('i-ciudad');
-  sel.classList.remove('loading');
-  sel.innerHTML = '<option value="">Selecciona ciudad</option>' +
-    DATA.cities.map(c => `<option value="${esc(c)}">${esc(c)}</option>`).join('');
+  const sel=document.getElementById('i-ciudad'); sel.classList.remove('loading');
+  sel.innerHTML='<option value="">Selecciona ciudad</option>'+DATA.cities.map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');
 }
 
 function onCiudad(p) {
-  const c = document.getElementById(`${p}-ciudad`).value;
-  const sel = document.getElementById(`${p}-pdv`);
-  const list = DATA.cityPdvs[c] || [];
-  sel.innerHTML = '<option value="">Selecciona PDV</option>' +
-    list.map(x => `<option value="${esc(x)}">${esc(x)}</option>`).join('');
+  const c=document.getElementById(`${p}-ciudad`).value;
+  const sel=document.getElementById(`${p}-pdv`);
+  const list=DATA.cityPdvs[c]||[];
+  sel.innerHTML='<option value="">Selecciona PDV</option>'+list.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join('');
 }
 
 function fillSkus() {
-  const sel = document.getElementById('v-sku');
-  sel.classList.remove('loading');
-  if (!DATA.skus.length) {
-    sel.innerHTML = '<option value="">No hay productos cargados en SKU</option>';
-    return;
-  }
-  sel.innerHTML = '<option value="">Selecciona producto</option>' +
-    DATA.skus.map((s,i) => {
-      const lbl = s.marca ? `${s.nombre} — ${s.marca}` : s.nombre;
-      return `<option value="${i}">${esc(lbl)}</option>`;
-    }).join('');
+  const sel=document.getElementById('v-sku'); sel.classList.remove('loading');
+  if(!DATA.skus.length){sel.innerHTML='<option value="">No hay productos en SKU</option>';return;}
+  sel.innerHTML='<option value="">Selecciona producto</option>'+
+    DATA.skus.map((s,i)=>{const lbl=s.marca?`${s.nombre} — ${s.marca}`:s.nombre; return `<option value="${i}">${esc(lbl)}</option>`;}).join('');
 }
 
 function onSku() {
-  const idx = document.getElementById('v-sku').value;
-  if (idx === '') return;
-  const s = DATA.skus[Number(idx)];
-  if (s && s.precio > 0) document.getElementById('v-precio').value = s.precio;
+  const idx=document.getElementById('v-sku').value; if(idx==='') return;
+  const s=DATA.skus[Number(idx)];
+  if(s&&s.precio>0) document.getElementById('v-precio').value=s.precio;
   calcSub();
 }
 
@@ -852,179 +969,238 @@ function onSku() {
    GPS
    ══════════════════════════════════════════════════════════ */
 function reqLoc(elId) {
-  const el = document.getElementById(elId);
-  if (!el) return;
-  if (!navigator.geolocation) { el.innerHTML='<span class="loc-chip err">📍 No disponible</span>'; return; }
-  el.innerHTML = '<span class="loc-chip">📍 Obteniendo ubicación...</span>';
+  const el=document.getElementById(elId); if(!el) return;
+  if(!navigator.geolocation){el.innerHTML='<span class="loc-chip err">📍 No disponible</span>';return;}
+  el.innerHTML='<span class="loc-chip">📍 Obteniendo ubicación...</span>';
   navigator.geolocation.getCurrentPosition(
-    pos => { userLoc = { lat: pos.coords.latitude, lng: pos.coords.longitude }; el.innerHTML = '<span class="loc-chip ok">📍 Ubicación capturada ✓</span>'; },
-    ()  => { el.innerHTML = '<span class="loc-chip err">📍 Permiso denegado</span>'; }
+    pos=>{userLoc={lat:pos.coords.latitude,lng:pos.coords.longitude}; el.innerHTML='<span class="loc-chip ok">📍 Ubicación capturada ✓</span>';},
+    ()=>{el.innerHTML='<span class="loc-chip err">📍 Permiso denegado</span>';}
   );
 }
 
 /* ══════════════════════════════════════════════════════════
-   FOTO
+   FOTO con compresión
    ══════════════════════════════════════════════════════════ */
-function onFotoChange(e, p) {
-  const file = e.target.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = () => {
-    const dataUrl = reader.result;
-    const b64 = dataUrl.split(',')[1];
-    const obj = { b64: b64, name: file.name, mime: file.type, dataUrl: dataUrl };
-    if (p === 'i') curFotoIngreso = obj;
-    else           curFotoSalida  = obj;
-    const box = document.getElementById(`${p}-foto-box`);
-    box.classList.add('has-photo');
-    box.innerHTML = `
-      <div class="foto-preview-wrap">
-        <img class="foto-preview" src="${dataUrl}">
-        <button type="button" class="foto-remove" onclick="removeFoto(event,'${p}')">✕</button>
-      </div>
-      <input type="file" id="${p}-foto-input" class="foto-input" accept="image/*" capture="environment" onchange="onFotoChange(event,'${p}')">
-    `;
-  };
-  reader.readAsDataURL(file);
+async function compressPhoto(file) {
+  return new Promise((resolve,reject)=>{
+    const reader=new FileReader();
+    reader.onload=()=>{
+      const img=new Image();
+      img.onload=()=>{
+        const canvas=document.createElement('canvas');
+        const MAX=1280; let w=img.width,h=img.height;
+        if(w>h&&w>MAX){h=h*(MAX/w);w=MAX;}
+        else if(h>MAX){w=w*(MAX/h);h=MAX;}
+        canvas.width=w; canvas.height=h;
+        canvas.getContext('2d').drawImage(img,0,0,w,h);
+        const dataUrl=canvas.toDataURL('image/jpeg',0.82);
+        const sizeKb=Math.round(dataUrl.length*0.75/1024);
+        resolve({
+          b64: dataUrl.split(',')[1],
+          name: (file.name||'foto.jpg').replace(/\.[^.]+$/,'.jpg'),
+          mime: 'image/jpeg',
+          dataUrl: dataUrl,
+          sizeKb: sizeKb
+        });
+      };
+      img.onerror=reject;
+      img.src=reader.result;
+    };
+    reader.onerror=reject;
+    reader.readAsDataURL(file);
+  });
 }
 
-function removeFoto(e, p) {
-  e.preventDefault();
-  e.stopPropagation();
-  if (p === 'i') curFotoIngreso = null;
-  else           curFotoSalida  = null;
-  const box = document.getElementById(`${p}-foto-box`);
-  box.classList.remove('has-photo');
-  const iconText = p === 'i' ? 'Tomar foto del PDV' : 'Foto de cierre del PDV';
-  const hintText = p === 'i' ? 'Toca para abrir cámara · obligatorio' : 'Para registrar el estado al final del turno';
-  box.innerHTML = `
-    <div class="foto-content">
-      <div class="foto-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2v11z" stroke="white" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="13" r="4" stroke="white" stroke-width="2"/></svg>
-      </div>
-      <div class="foto-text">${iconText}</div>
-      <div class="foto-hint">${hintText}</div>
+async function onFotoChange(e,p) {
+  const file=e.target.files[0]; if(!file) return;
+  const box=document.getElementById(`${p}-foto-box`); box.classList.add('processing');
+  try {
+    const obj=await compressPhoto(file);
+    if(p==='i') curFotoIngreso=obj; else curFotoSalida=obj;
+    renderFotoPreview(p,obj);
+  } catch(err) {
+    alert('No pude procesar la foto: '+err.message);
+  }
+  box.classList.remove('processing');
+}
+
+function renderFotoPreview(p,obj) {
+  const box=document.getElementById(`${p}-foto-box`);
+  box.classList.add('has-photo');
+  box.innerHTML=`
+    <div class="foto-preview-wrap">
+      <img class="foto-preview" src="${obj.dataUrl}">
+      <button type="button" class="foto-remove" onclick="removeFoto(event,'${p}')">✕</button>
     </div>
-    <input type="file" id="${p}-foto-input" class="foto-input" accept="image/*" capture="environment" onchange="onFotoChange(event,'${p}')">
-  `;
-  // Asegurar que el label sigue funcionando
-  box.setAttribute('for', `${p}-foto-input`);
+    <div style="padding:8px 12px;">
+      <div class="foto-meta">📷 Comprimida · ${obj.sizeKb} KB · lista para subir</div>
+    </div>
+    <input type="file" id="${p}-foto-input" class="foto-input" accept="image/*" capture="environment" onchange="onFotoChange(event,'${p}')">`;
+}
+
+function removeFoto(e,p) {
+  e.preventDefault(); e.stopPropagation();
+  if(p==='i') curFotoIngreso=null; else curFotoSalida=null;
+  const box=document.getElementById(`${p}-foto-box`);
+  box.classList.remove('has-photo');
+  const txt=p==='i'?'Tomar foto del PDV':'Foto de cierre del PDV';
+  const hint=p==='i'?'Toca para abrir cámara':'Para registrar el estado al final';
+  box.innerHTML=`
+    <div class="foto-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2v11z" stroke="white" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="13" r="4" stroke="white" stroke-width="2"/></svg></div>
+    <div class="foto-text">${txt}</div>
+    <div class="foto-hint">${hint}</div>
+    <input type="file" id="${p}-foto-input" class="foto-input" accept="image/*" capture="environment" onchange="onFotoChange(event,'${p}')">`;
+  box.setAttribute('for',`${p}-foto-input`);
 }
 
 /* ══════════════════════════════════════════════════════════
-   VENTAS — items
+   VENTAS
    ══════════════════════════════════════════════════════════ */
 function calcSub() {
-  const c = parseFloat(document.getElementById('v-cant').value) || 0;
-  const p = parseFloat(document.getElementById('v-precio').value) || 0;
-  const sub = c * p;
-  document.getElementById('v-sub').textContent = '$ ' + fmt(sub);
+  const c=parseFloat(document.getElementById('v-cant').value)||0;
+  const p=parseFloat(document.getElementById('v-precio').value)||0;
+  document.getElementById('v-sub').textContent='$ '+fmt(c*p);
 }
 
 function addItem() {
-  if (!currentTurn) { alert('⚠️ Primero realiza el INGRESO para iniciar un turno.'); switchTab('ingreso'); return; }
-  const idx = document.getElementById('v-sku').value;
-  const cant = parseFloat(document.getElementById('v-cant').value) || 0;
-  const precio = parseFloat(document.getElementById('v-precio').value) || 0;
-  if (idx === '' || cant <= 0) { alert('Selecciona producto y cantidad válida'); return; }
-  const s = DATA.skus[Number(idx)];
-  ventaItems.push({
-    producto: s.nombre,
-    marca:    s.marca,
-    cantidad: cant,
-    precio:   precio,
-    subtotal: cant * precio
-  });
-  document.getElementById('v-sku').value = '';
-  document.getElementById('v-cant').value = '1';
-  document.getElementById('v-precio').value = '0';
-  calcSub();
-  renderItems();
+  if(!currentTurn){alert('⚠️ Primero realiza el INGRESO.');switchTab('ingreso');return;}
+  const idx=document.getElementById('v-sku').value;
+  const cant=parseFloat(document.getElementById('v-cant').value)||0;
+  const precio=parseFloat(document.getElementById('v-precio').value)||0;
+  if(idx===''||cant<=0){alert('Selecciona producto y cantidad válida');return;}
+  const s=DATA.skus[Number(idx)];
+  ventaItems.push({producto:s.nombre,marca:s.marca,cantidad:cant,precio:precio,subtotal:cant*precio});
+  document.getElementById('v-sku').value='';
+  document.getElementById('v-cant').value='1';
+  document.getElementById('v-precio').value='0';
+  calcSub(); renderItems();
 }
 
-function removeItem(i) {
-  ventaItems.splice(i,1);
-  renderItems();
-}
+function removeItem(i){ventaItems.splice(i,1); renderItems();}
 
 function renderItems() {
-  const list = document.getElementById('item-list');
-  if (!ventaItems.length) {
-    list.innerHTML = '<div class="empty-list">Sin productos agregados todavía</div>';
+  const list=document.getElementById('item-list');
+  if(!ventaItems.length){
+    list.innerHTML='<div class="empty-list">Sin productos agregados todavía</div>';
   } else {
-    list.innerHTML = ventaItems.map((it,i) => `
+    list.innerHTML=ventaItems.map((it,i)=>`
       <div class="item-row">
         <div class="item-info">
           <div class="item-name">${esc(it.producto)}</div>
-          <div class="item-meta">${it.marca ? esc(it.marca)+' · ' : ''}${it.cantidad} × $${fmt(it.precio)}</div>
+          <div class="item-meta">${it.marca?esc(it.marca)+' · ':''}${it.cantidad} × $${fmt(it.precio)}</div>
         </div>
         <div class="item-sub">$ ${fmt(it.subtotal)}</div>
         <button type="button" class="item-del" onclick="removeItem(${i})">✕</button>
-      </div>
-    `).join('');
+      </div>`).join('');
   }
-  const total = ventaItems.reduce((a,b) => a + b.subtotal, 0);
-  document.getElementById('v-total').textContent = '$ ' + fmt(total);
-  document.getElementById('v-count').textContent = `${ventaItems.length} item${ventaItems.length!==1?'s':''}`;
+  const total=ventaItems.reduce((a,b)=>a+b.subtotal,0);
+  document.getElementById('v-total').textContent='$ '+fmt(total);
+  document.getElementById('v-count').textContent=`${ventaItems.length} item${ventaItems.length!==1?'s':''}`;
 }
 
 /* ══════════════════════════════════════════════════════════
-   VOZ — accordion + ratings
+   VOZ — chips y progreso
    ══════════════════════════════════════════════════════════ */
-function toggleAcc(n) {
-  const body = document.getElementById(`body-${n}`);
-  const chev = document.getElementById(`chev-${n}`);
-  body.classList.toggle('open');
-  chev.classList.toggle('open');
+function onChip(btn) {
+  const grid=btn.parentElement;
+  const key=grid.dataset.key;
+  const val=btn.dataset.val;
+  const isMulti=grid.dataset.multi==='true';
+  const otherKey=grid.dataset.other;
+
+  if(isMulti) {
+    btn.classList.toggle('on');
+    const all=[...grid.querySelectorAll('.chip.on')].map(c=>c.dataset.val);
+    vozState[key]=all;
+  } else {
+    grid.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));
+    btn.classList.add('on');
+    vozState[key]=val;
+  }
+
+  // Mostrar/ocultar campo "Otro"
+  if(otherKey) {
+    const otherBox=document.getElementById('other-'+otherKey);
+    const isOtroSelected = isMulti
+      ? vozState[key].includes('Otro')
+      : val==='Otro' && btn.classList.contains('on');
+    if(otherBox) otherBox.classList.toggle('show', isOtroSelected);
+    if(!isOtroSelected) vozState[otherKey]='';
+  }
+
+  updateProgress();
 }
 
-function setRating(key, val) {
-  ratings[key] = val;
-  document.getElementById(`vz-${key}`).value = val;
-  const grid = key === 'nps' ? 'nps-grid' : 'cal-grid';
-  document.querySelectorAll(`#${grid} .rating-chip`).forEach(c => {
-    c.classList.toggle('on', Number(c.dataset.val) === val);
-    c.classList.toggle('gold', val >= 4);
-  });
+function toggleVino() {
+  const block=document.getElementById('vino-block');
+  block.classList.toggle('show', vozState.consume_vino==='Sí');
+}
+
+function isAnswered(v) {
+  if (Array.isArray(v)) return v.length>0;
+  return String(v||'').trim().length>0;
+}
+
+function updateProgress() {
+  // Las 23 preguntas obligatorias
+  let answered=0;
+  const requiredKeys=[
+    'edad','genero','frecuencia','tipo_licor','lugar_compra',
+    'marcas_conocidas','marca_frecuente','razon_marca',
+    'smirnoff_palabra','smirnoff_recomienda',
+    'oldparr_palabra','oldparr_recomienda',
+    'buchanans_palabra','buchanans_recomienda',
+    'consume_vino','comparte_vino','momentos_vino','tipo_vino','factor_vino','marca_vino',
+    'incentivo','considero_otra','recomendacion'
+  ];
+  // Si no consume vino, las 6 preguntas de vino se consideran "N/A" (resueltas)
+  if (vozState.consume_vino==='No') {
+    ['comparte_vino','momentos_vino','tipo_vino','factor_vino','marca_vino'].forEach(k=>{
+      if(!isAnswered(vozState[k])) answered++;
+    });
+  }
+  requiredKeys.forEach(k=>{ if(isAnswered(vozState[k])) answered++; });
+  // Evita doble conteo si "No" en vino
+  if(answered>23) answered=23;
+  const pct=Math.round((answered/23)*100);
+  document.getElementById('vz-fill').style.width=pct+'%';
+  document.getElementById('vz-done').textContent=answered;
 }
 
 /* ══════════════════════════════════════════════════════════
    TABS
    ══════════════════════════════════════════════════════════ */
 function switchTab(tab) {
-  ['ingreso','ventas','voz','salida'].forEach(t => {
-    document.getElementById(`form-${t}`).style.display = tab === t ? '' : 'none';
-    document.getElementById(`tab-${t}`).classList.toggle('active', tab === t);
+  ['ingreso','ventas','voz','salida'].forEach(t=>{
+    document.getElementById(`form-${t}`).style.display=tab===t?'':'none';
+    document.getElementById(`tab-${t}`).classList.toggle('active',tab===t);
   });
-  if (tab === 'ingreso') reqLoc('i-loc');
-  if (tab === 'salida')  reqLoc('s-loc');
-  if (tab !== 'ingreso' && !currentTurn) {
-    // sigue mostrándose pero los info-rows estarán en —
-    renderTurnBadge();
-  }
+  if(tab==='ingreso') reqLoc('i-loc');
+  if(tab==='salida')  reqLoc('s-loc');
+  renderTurnBadge();
+  window.scrollTo(0,0);
 }
 
 /* ══════════════════════════════════════════════════════════
-   GENERADORES DE REPORTE WHATSAPP
+   REPORTES WhatsApp
    ══════════════════════════════════════════════════════════ */
-function fDate() {
-  const n = new Date();
-  return n.toLocaleDateString('es-CO',{weekday:'long',year:'numeric',month:'long',day:'numeric'}) +
-    ' · ' + n.toLocaleTimeString('es-CO',{hour:'2-digit',minute:'2-digit'});
-}
-function lineSep() { return '─'.repeat(32); }
-function fmt(n) { return Number(n||0).toLocaleString('es-CO'); }
-function esc(s) { return String(s||'').replace(/[&<>"']/g,m=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m])); }
+function fDate(){const n=new Date(); return n.toLocaleDateString('es-CO',{weekday:'long',year:'numeric',month:'long',day:'numeric'})+' · '+n.toLocaleTimeString('es-CO',{hour:'2-digit',minute:'2-digit'});}
+function lineSep(){return '─'.repeat(32);}
+function fmt(n){return Number(n||0).toLocaleString('es-CO');}
+function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]));}
 
-function buildIngresoReport(code) {
-  const camp  = document.getElementById('i-campana').value;
-  const usr   = document.getElementById('i-usuario').value;
-  const ced   = document.getElementById('i-cedula').value;
-  const ctc   = document.getElementById('i-contacto').value;
-  const ciu   = document.getElementById('i-ciudad').value;
-  const pdv   = document.getElementById('i-pdv').value;
-  const obs   = document.getElementById('i-obs').value || '(Sin novedad)';
-  const loc   = userLoc ? `📍 ${userLoc.lat.toFixed(5)}, ${userLoc.lng.toFixed(5)}` : '📍 Sin ubicación';
+function buildIngresoReport(code, fotoUrl) {
+  const camp=document.getElementById('i-campana').value;
+  const usr=document.getElementById('i-usuario').value;
+  const ced=document.getElementById('i-cedula').value;
+  const ctc=document.getElementById('i-contacto').value;
+  const ciu=document.getElementById('i-ciudad').value;
+  const pdv=document.getElementById('i-pdv').value;
+  const obs=document.getElementById('i-obs').value || '(Sin novedad)';
+  const loc=userLoc?`📍 ${userLoc.lat.toFixed(5)}, ${userLoc.lng.toFixed(5)}`:'📍 Sin ubicación';
+  const fotoLine = fotoUrl && !fotoUrl.startsWith('ERROR')
+    ? `📷 Foto: ${fotoUrl}`
+    : (curFotoIngreso ? `📷 Foto: ⚠ pendiente de subir` : '📷 Foto: No adjunta');
   return [
     '🥃 INGRESO · FESTIVAL DE LICORES',
     lineSep(),
@@ -1037,7 +1213,7 @@ function buildIngresoReport(code) {
     '📋 OBSERVACIÓN:',
     obs,
     '',
-    `📷 Foto: ${curFotoIngreso ? 'Adjuntada ✓' : 'No'}`,
+    fotoLine,
     loc,
     '',
     `🔒 Código de turno: ${code}`,
@@ -1047,19 +1223,17 @@ function buildIngresoReport(code) {
 }
 
 function buildVentasReport(code) {
-  const lines = ventaItems.map(it =>
-    `   • ${it.producto}${it.marca?' ('+it.marca+')':''} — ${it.cantidad} × $${fmt(it.precio)} = $${fmt(it.subtotal)}`
-  );
-  const total = ventaItems.reduce((a,b) => a + b.subtotal, 0);
+  const lines=ventaItems.map(it=>`   • ${it.producto}${it.marca?' ('+it.marca+')':''} — ${it.cantidad} × $${fmt(it.precio)} = $${fmt(it.subtotal)}`);
+  const total=ventaItems.reduce((a,b)=>a+b.subtotal,0);
   return [
     '💰 VENTAS · FESTIVAL DE LICORES',
     lineSep(),
     `📅 ${fDate()}`,
-    `🏪 ${currentTurn ? currentTurn.pdv : '—'}`,
+    `🏪 ${currentTurn?currentTurn.pdv:'—'}`,
     `🔒 Turno: ${code}`,
     '',
     `🧾 PRODUCTOS (${ventaItems.length}):`,
-    (lines.length ? lines.join('\n') : '   (Sin productos)'),
+    (lines.length?lines.join('\n'):'   (Sin productos)'),
     '',
     lineSep(),
     `🛒 TOTAL VENTA: $ ${fmt(total)}`,
@@ -1069,54 +1243,84 @@ function buildVentasReport(code) {
 }
 
 function buildVozReport(code) {
-  const g = id => document.getElementById(id).value || '—';
+  const v = vozState;
+  const arrFmt = (a) => Array.isArray(a) && a.length ? a.join(', ') : '—';
+  const oneFmt = (s) => s || '—';
+  const tipoLicor = v.tipo_licor==='Otro' && v.tipo_licor_otro ? `Otro: ${v.tipo_licor_otro}` : oneFmt(v.tipo_licor);
+  const momentos  = v.momentos_vino_otro ? arrFmt(v.momentos_vino).replace('Otro',`Otro: ${v.momentos_vino_otro}`) : arrFmt(v.momentos_vino);
+  const factor    = v.factor_vino==='Otro' && v.factor_vino_otro ? `Otro: ${v.factor_vino_otro}` : oneFmt(v.factor_vino);
+
+  let vinoBlock;
+  if (v.consume_vino==='Sí') {
+    vinoBlock = [
+      `🍷 VINOS MEICO`,
+      `   Comparte con: ${oneFmt(v.comparte_vino)}`,
+      `   Momentos: ${momentos}`,
+      `   Tipo preferido: ${oneFmt(v.tipo_vino)}`,
+      `   Factor de confianza: ${factor}`,
+      `   Marca preferida: ${oneFmt(v.marca_vino)}`
+    ].join('\n');
+  } else {
+    vinoBlock = `🍷 VINOS MEICO\n   No consume vino`;
+  }
+
   return [
     '📣 VOZ DEL CONSUMIDOR · FESTIVAL DE LICORES',
     lineSep(),
     `📅 ${fDate()}`,
-    `🏪 ${currentTurn ? currentTurn.pdv : g('vz-razon')}`,
+    `🏪 ${currentTurn?currentTurn.pdv:'—'}`,
     `🔒 Turno: ${code}`,
     '',
-    `🏛 IDENTIFICACIÓN`,
-    `   Razón Social: ${g('vz-razon')}`,
-    `   NIT/Cédula: ${g('vz-nit')}   ·   Rep: ${g('vz-rep')}`,
-    `   ${g('vz-localidad')} · ${g('vz-barrio')}`,
-    `   Dir: ${g('vz-dir')}`,
-    `   Contacto: ${g('vz-contacto')}   ·   ${g('vz-correo')}`,
+    `👤 SOBRE EL CONSUMIDOR`,
+    `   Edad: ${oneFmt(v.edad)}   ·   Género: ${oneFmt(v.genero)}`,
     '',
-    `🛒 COMPORTAMIENTO`,
-    `   Cat: ${g('vz-cat')}   ·   Tipo: ${g('vz-tipo')}`,
-    `   Frecuencia: ${g('vz-frec')}   ·   Pago: ${g('vz-pago')}`,
-    `   Ticket promedio: $${fmt(g('vz-ticket'))}`,
-    `   Días entrega: ${g('vz-dias')}`,
+    `🥃 HÁBITOS`,
+    `   Frecuencia: ${oneFmt(v.frecuencia)}`,
+    `   Tipo licor: ${tipoLicor}`,
+    `   Compra en: ${oneFmt(v.lugar_compra)}`,
     '',
-    `⭐ SATISFACCIÓN`,
-    `   NPS: ${ratings.nps}/5   ·   Vendedor: ${ratings.cal}/5`,
-    `   Factor compra: ${g('vz-factor')}`,
-    `   Producto faltante: ${g('vz-falt')}`,
-    `   Fortaleza: ${g('vz-fort')}`,
-    `   Inconvenientes: ${g('vz-inc')} ${g('vz-incd')!=='—'?'· '+g('vz-incd'):''}`,
-    `   % Vitrina: ${g('vz-vit')}%   ·   Proveedor: ${g('vz-prov')}`,
-    `   Material publicitario: ${g('vz-pub')}   ·   Promos: ${g('vz-acep')}`,
+    `🏷 MARCAS`,
+    `   Conoce: ${arrFmt(v.marcas_conocidas)}`,
+    `   Compra más: ${oneFmt(v.marca_frecuente)}`,
+    `   Razón: ${oneFmt(v.razon_marca)}`,
+    '',
+    `🔴 SMIRNOFF`,
+    `   Palabra: ${oneFmt(v.smirnoff_palabra)}   ·   Recomienda: ${oneFmt(v.smirnoff_recomienda)}`,
+    '',
+    `🟢 OLD PARR`,
+    `   Palabra: ${oneFmt(v.oldparr_palabra)}   ·   Recomienda: ${oneFmt(v.oldparr_recomienda)}`,
+    '',
+    `🔵 BUCHANAN'S`,
+    `   Palabra: ${oneFmt(v.buchanans_palabra)}   ·   Recomienda: ${oneFmt(v.buchanans_recomienda)}`,
+    '',
+    vinoBlock,
+    '',
+    `🎁 CIERRE`,
+    `   Incentivo: ${oneFmt(v.incentivo)}`,
+    `   Consideró otra: ${oneFmt(v.considero_otra)}`,
+    `   Recomendación: ${oneFmt(v.recomendacion)}`,
     '',
     lineSep(),
     '#FestivalLicores #VozConsumidor'
   ].join('\n');
 }
 
-function buildSalidaReport(code) {
-  const obs = document.getElementById('s-obs').value || '(Sin novedad)';
-  const total = document.getElementById('s-total').value || '0';
-  const loc   = userLoc ? `📍 ${userLoc.lat.toFixed(5)}, ${userLoc.lng.toFixed(5)}` : '📍 Sin ubicación';
+function buildSalidaReport(code, fotoUrl) {
+  const obs=document.getElementById('s-obs').value||'(Sin novedad)';
+  const total=document.getElementById('s-total').value||'0';
+  const loc=userLoc?`📍 ${userLoc.lat.toFixed(5)}, ${userLoc.lng.toFixed(5)}`:'📍 Sin ubicación';
+  const fotoLine = fotoUrl && !fotoUrl.startsWith('ERROR')
+    ? `📷 Foto salida: ${fotoUrl}`
+    : (curFotoSalida ? `📷 Foto: ⚠ pendiente` : '📷 Foto: No adjunta');
   return [
     '🚪 SALIDA · FESTIVAL DE LICORES',
     lineSep(),
     `📅 ${fDate()}`,
-    `🏪 ${currentTurn ? currentTurn.pdv : '—'}`,
+    `🏪 ${currentTurn?currentTurn.pdv:'—'}`,
     `🔒 Turno: ${code}`,
     '',
     `🛒 TOTAL VENTA DEL TURNO: $ ${fmt(total)}`,
-    `📷 Foto salida: ${curFotoSalida ? 'Adjuntada ✓' : 'No'}`,
+    fotoLine,
     '',
     '📋 OBSERVACIÓN FINAL:',
     obs,
@@ -1128,251 +1332,226 @@ function buildSalidaReport(code) {
 }
 
 /* ══════════════════════════════════════════════════════════
-   ENVÍO DE FORMULARIOS
+   POST a Apps Script — text/plain (CORS-friendly, sin preflight)
    ══════════════════════════════════════════════════════════ */
 function genCode() {
-  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-  let c = '';
-  for (let i = 0; i < 6; i++) c += chars.charAt(Math.floor(Math.random() * chars.length));
+  const chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  let c=''; for(let i=0;i<6;i++) c+=chars.charAt(Math.floor(Math.random()*chars.length));
   return c;
 }
 
-async function postToScript(fd) {
-  try { await fetch(APPS_SCRIPT_URL, { method: 'POST', body: fd, mode: 'no-cors' }); return true; }
-  catch(e) { console.warn('postToScript', e); return false; }
+async function postJson(payload) {
+  try {
+    const res = await fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload),
+      redirect: 'follow'
+    });
+    if (!res.ok) return { status:'error', msg:'HTTP '+res.status };
+    return await res.json();
+  } catch (e) {
+    console.warn('postJson failed', e);
+    return { status:'error', msg: e.message };
+  }
 }
 
-function busy(btnId, isBusy, label) {
-  const btn = document.getElementById(btnId);
-  btn.disabled = isBusy;
-  if (isBusy) btn.innerHTML = '<span class="spinner"></span> Enviando...';
-  else        btn.innerHTML = label;
+function busy(btnId,isBusy,label) {
+  const btn=document.getElementById(btnId);
+  btn.disabled=isBusy;
+  if(isBusy) btn.innerHTML='<span class="spinner"></span> Enviando...';
+  else       btn.innerHTML=label;
 }
 
+/* ─────────── INGRESO ─────────── */
 async function submitIngreso(e) {
   e.preventDefault();
-  const code = genCode();
-  const camp = document.getElementById('i-campana').value;
-  const usr  = document.getElementById('i-usuario').value;
-  const pdv  = document.getElementById('i-pdv').value;
-  const ciu  = document.getElementById('i-ciudad').value;
-  if (!camp || !usr || !ciu || !pdv) { alert('Completa los campos obligatorios.'); return; }
+  const code=genCode();
+  const camp=document.getElementById('i-campana').value;
+  const usr=document.getElementById('i-usuario').value;
+  const pdv=document.getElementById('i-pdv').value;
+  const ciu=document.getElementById('i-ciudad').value;
+  if(!camp||!usr||!ciu||!pdv){alert('Completa los campos obligatorios.');return;}
 
-  const lblIco = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M22 2L15 22l-4-9-9-4 20-7z" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg>`;
-  busy('btn-ingreso', true);
+  const lblIco=`<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M22 2L15 22l-4-9-9-4 20-7z" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg>`;
+  busy('btn-ingreso',true);
 
-  const fd = new FormData();
-  fd.append('action','ingreso');
-  fd.append('codigo', code);
-  fd.append('campana', camp);
-  fd.append('usuario', usr);
-  fd.append('cedula', document.getElementById('i-cedula').value);
-  fd.append('contacto', document.getElementById('i-contacto').value);
-  fd.append('ciudad', ciu);
-  fd.append('pdv', pdv);
-  fd.append('lat', userLoc?userLoc.lat:'');
-  fd.append('lng', userLoc?userLoc.lng:'');
-  fd.append('observacion', document.getElementById('i-obs').value);
-  if (curFotoIngreso) {
-    fd.append('foto_base64', curFotoIngreso.b64);
-    fd.append('foto_name',   curFotoIngreso.name);
-    fd.append('foto_mime',   curFotoIngreso.mime);
+  const payload = {
+    action:'ingreso', codigo:code,
+    campana:camp, usuario:usr,
+    cedula:document.getElementById('i-cedula').value,
+    contacto:document.getElementById('i-contacto').value,
+    ciudad:ciu, pdv:pdv,
+    lat:userLoc?userLoc.lat:'', lng:userLoc?userLoc.lng:'',
+    observacion:document.getElementById('i-obs').value
+  };
+  if(curFotoIngreso) {
+    payload.foto_base64 = curFotoIngreso.b64;
+    payload.foto_name   = curFotoIngreso.name;
+    payload.foto_mime   = curFotoIngreso.mime;
   }
 
-  await postToScript(fd);
+  const result = await postJson(payload);
 
-  // Guardar turno y mostrar reporte
-  currentTurn = { code, pdv, ciudad: ciu, campana: camp, usuario: usr };
+  currentTurn={code, pdv, ciudad:ciu, campana:camp, usuario:usr};
   saveTurn(currentTurn);
 
-  curReport = buildIngresoReport(code);
-  curCode   = code;
+  curReport=buildIngresoReport(code, result.foto || '');
+  curCode=code;
   showModal();
 
-  busy('btn-ingreso', false, `${lblIco} Iniciar Turno · Enviar Ingreso`);
+  busy('btn-ingreso',false,`${lblIco} Iniciar Turno · Enviar Ingreso`);
 }
 
+/* ─────────── VENTAS ─────────── */
 async function submitVentas(e) {
   e.preventDefault();
-  if (!currentTurn) { alert('⚠️ Primero realiza el INGRESO.'); switchTab('ingreso'); return; }
-  if (!ventaItems.length) { alert('Agrega al menos un producto.'); return; }
+  if(!currentTurn){alert('⚠️ Primero realiza el INGRESO.');switchTab('ingreso');return;}
+  if(!ventaItems.length){alert('Agrega al menos un producto.');return;}
 
-  const lblIco = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M22 2L15 22l-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>`;
-  busy('btn-ventas', true);
+  const lblIco=`<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M22 2L15 22l-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>`;
+  busy('btn-ventas',true);
 
-  const fd = new FormData();
-  fd.append('action','ventas');
-  fd.append('codigo', currentTurn.code);
-  fd.append('campana', currentTurn.campana);
-  fd.append('usuario', currentTurn.usuario);
-  fd.append('ciudad',  currentTurn.ciudad);
-  fd.append('pdv',     currentTurn.pdv);
-  fd.append('items',   JSON.stringify(ventaItems));
+  const result = await postJson({
+    action:'ventas', codigo:currentTurn.code,
+    campana:currentTurn.campana, usuario:currentTurn.usuario,
+    ciudad:currentTurn.ciudad, pdv:currentTurn.pdv,
+    items:ventaItems
+  });
 
-  await postToScript(fd);
-
-  curReport = buildVentasReport(currentTurn.code);
-  curCode   = currentTurn.code;
+  curReport=buildVentasReport(currentTurn.code);
+  curCode=currentTurn.code;
   showModal();
 
-  busy('btn-ventas', false, `${lblIco} Guardar Ventas`);
+  busy('btn-ventas',false,`${lblIco} Guardar Ventas`);
 }
 
+/* ─────────── VOZ ─────────── */
 async function submitVoz(e) {
   e.preventDefault();
-  if (!currentTurn) { alert('⚠️ Primero realiza el INGRESO.'); switchTab('ingreso'); return; }
+  if(!currentTurn){alert('⚠️ Primero realiza el INGRESO.');switchTab('ingreso');return;}
 
-  const lblIco = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M22 2L15 22l-4-9-9-4 20-7z" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg>`;
-  busy('btn-voz', true);
+  const lblIco=`<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M22 2L15 22l-4-9-9-4 20-7z" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg>`;
+  busy('btn-voz',true);
 
-  const fd = new FormData();
-  fd.append('action','voz');
-  fd.append('codigo', currentTurn.code);
-  fd.append('campana', currentTurn.campana);
-  fd.append('pdv', currentTurn.pdv);
-  fd.append('razon_social',         document.getElementById('vz-razon').value);
-  fd.append('nit',                  document.getElementById('vz-nit').value);
-  fd.append('rep_legal',            document.getElementById('vz-rep').value);
-  fd.append('ubicacion_geo',        document.getElementById('vz-ubicacion').value);
-  fd.append('localidad',            document.getElementById('vz-localidad').value);
-  fd.append('barrio',               document.getElementById('vz-barrio').value);
-  fd.append('dir_entrega',          document.getElementById('vz-dir').value);
-  fd.append('contacto_principal',   document.getElementById('vz-contacto').value);
-  fd.append('correo',               document.getElementById('vz-correo').value);
-  fd.append('cat_establecimiento',  document.getElementById('vz-cat').value);
-  fd.append('tipo_cliente',         document.getElementById('vz-tipo').value);
-  fd.append('frecuencia_compra',    document.getElementById('vz-frec').value);
-  fd.append('metodo_pago',          document.getElementById('vz-pago').value);
-  fd.append('ticket_promedio',      document.getElementById('vz-ticket').value);
-  fd.append('dias_entrega',         document.getElementById('vz-dias').value);
-  fd.append('satisfaccion',         ratings.nps);
-  fd.append('factor_determinante',  document.getElementById('vz-factor').value);
-  fd.append('calificacion_vendedor',ratings.cal);
-  fd.append('producto_faltante',    document.getElementById('vz-falt').value);
-  fd.append('fortaleza_competencia',document.getElementById('vz-fort').value);
-  fd.append('inconvenientes',       document.getElementById('vz-inc').value);
-  fd.append('detalle_inconvenientes',document.getElementById('vz-incd').value);
-  fd.append('participacion_vitrina',document.getElementById('vz-vit').value);
-  fd.append('proveedor_principal',  document.getElementById('vz-prov').value);
-  fd.append('espacio_publicitario', document.getElementById('vz-pub').value);
-  fd.append('aceptacion_promociones',document.getElementById('vz-acep').value);
+  const v = vozState;
+  const result = await postJson({
+    action:'voz', codigo:currentTurn.code,
+    campana:currentTurn.campana, pdv:currentTurn.pdv,
+    edad:v.edad, genero:v.genero,
+    frecuencia:v.frecuencia, tipo_licor:v.tipo_licor, tipo_licor_otro:v.tipo_licor_otro,
+    lugar_compra:v.lugar_compra,
+    marcas_conocidas: Array.isArray(v.marcas_conocidas) ? v.marcas_conocidas.join(', ') : v.marcas_conocidas,
+    marca_frecuente:v.marca_frecuente, razon_marca:v.razon_marca,
+    smirnoff_palabra:v.smirnoff_palabra, smirnoff_recomienda:v.smirnoff_recomienda,
+    oldparr_palabra:v.oldparr_palabra, oldparr_recomienda:v.oldparr_recomienda,
+    buchanans_palabra:v.buchanans_palabra, buchanans_recomienda:v.buchanans_recomienda,
+    consume_vino:v.consume_vino, comparte_vino:v.comparte_vino,
+    momentos_vino: Array.isArray(v.momentos_vino) ? v.momentos_vino.join(', ') : v.momentos_vino,
+    momentos_vino_otro:v.momentos_vino_otro,
+    tipo_vino:v.tipo_vino, factor_vino:v.factor_vino, factor_vino_otro:v.factor_vino_otro,
+    marca_vino:v.marca_vino,
+    incentivo:v.incentivo, considero_otra:v.considero_otra, recomendacion:v.recomendacion
+  });
 
-  await postToScript(fd);
-
-  curReport = buildVozReport(currentTurn.code);
-  curCode   = currentTurn.code;
+  curReport=buildVozReport(currentTurn.code);
+  curCode=currentTurn.code;
   showModal();
 
-  busy('btn-voz', false, `${lblIco} Enviar Voz Consumidor`);
+  busy('btn-voz',false,`${lblIco} Enviar Voz Consumidor`);
 }
 
+/* ─────────── SALIDA ─────────── */
 async function submitSalida(e) {
   e.preventDefault();
-  if (!currentTurn) { alert('⚠️ Primero realiza el INGRESO.'); switchTab('ingreso'); return; }
+  if(!currentTurn){alert('⚠️ Primero realiza el INGRESO.');switchTab('ingreso');return;}
 
-  const lblIco = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M22 2L15 22l-4-9-9-4 20-7z" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg>`;
-  busy('btn-salida', true);
+  const lblIco=`<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="white" stroke-width="2" stroke-linecap="round"/><path d="M22 2L15 22l-4-9-9-4 20-7z" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg>`;
+  busy('btn-salida',true);
 
-  const fd = new FormData();
-  fd.append('action','salida');
-  fd.append('codigo', currentTurn.code);
-  fd.append('campana', currentTurn.campana);
-  fd.append('usuario', currentTurn.usuario);
-  fd.append('ciudad',  currentTurn.ciudad);
-  fd.append('pdv',     currentTurn.pdv);
-  fd.append('lat', userLoc?userLoc.lat:'');
-  fd.append('lng', userLoc?userLoc.lng:'');
-  fd.append('total_venta', document.getElementById('s-total').value || '0');
-  fd.append('observacion', document.getElementById('s-obs').value);
-  if (curFotoSalida) {
-    fd.append('foto_base64', curFotoSalida.b64);
-    fd.append('foto_name',   curFotoSalida.name);
-    fd.append('foto_mime',   curFotoSalida.mime);
+  const payload = {
+    action:'salida', codigo:currentTurn.code,
+    campana:currentTurn.campana, usuario:currentTurn.usuario,
+    ciudad:currentTurn.ciudad, pdv:currentTurn.pdv,
+    lat:userLoc?userLoc.lat:'', lng:userLoc?userLoc.lng:'',
+    total_venta:document.getElementById('s-total').value||'0',
+    observacion:document.getElementById('s-obs').value
+  };
+  if(curFotoSalida) {
+    payload.foto_base64 = curFotoSalida.b64;
+    payload.foto_name   = curFotoSalida.name;
+    payload.foto_mime   = curFotoSalida.mime;
   }
 
-  await postToScript(fd);
+  const result = await postJson(payload);
 
-  curReport = buildSalidaReport(currentTurn.code);
-  curCode   = currentTurn.code;
+  curReport=buildSalidaReport(currentTurn.code, result.foto || '');
+  curCode=currentTurn.code;
   showModal();
 
-  busy('btn-salida', false, `${lblIco} Cerrar Turno · Enviar Salida`);
+  busy('btn-salida',false,`${lblIco} Cerrar Turno · Enviar Salida`);
 }
 
 /* ══════════════════════════════════════════════════════════
    MODAL · COPY
    ══════════════════════════════════════════════════════════ */
 function showModal() {
-  document.getElementById('modal-code').textContent    = curCode;
-  document.getElementById('modal-preview').textContent = curReport;
+  document.getElementById('modal-code').textContent=curCode;
+  document.getElementById('modal-preview').textContent=curReport;
   document.getElementById('modal').classList.add('show');
 }
-function closeModal() { document.getElementById('modal').classList.remove('show'); }
+function closeModal(){document.getElementById('modal').classList.remove('show');}
 
 function copyReport() {
-  const finalText = curReport;
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(finalText).then(showCopied).catch(legacyCopy);
-  } else {
-    legacyCopy();
-  }
-  function legacyCopy() {
-    const ta = document.createElement('textarea');
-    ta.value = finalText;
-    document.body.appendChild(ta);
-    ta.select();
-    try { document.execCommand('copy'); } catch(_){}
-    document.body.removeChild(ta);
-    showCopied();
-  }
-  function showCopied() {
-    const b = document.querySelector('.btn-copy');
-    const orig = b.innerHTML;
-    b.innerHTML = '✅ ¡Copiado! Pégalo en WhatsApp';
-    setTimeout(() => { b.innerHTML = orig; }, 2500);
-  }
+  const t=curReport;
+  const showCopied=()=>{const b=document.querySelector('.btn-copy');const o=b.innerHTML;b.innerHTML='✅ ¡Copiado! Pégalo en WhatsApp';setTimeout(()=>{b.innerHTML=o;},2500);};
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(t).then(showCopied).catch(legacy);
+  } else { legacy(); }
+  function legacy(){const ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(_){}document.body.removeChild(ta);showCopied();}
 }
 
 /* ══════════════════════════════════════════════════════════
    RESET
    ══════════════════════════════════════════════════════════ */
 function resetForm(t) {
-  if (!confirm('¿Reiniciar este formulario?')) return;
-  if (t === 'ingreso') {
+  if(!confirm('¿Reiniciar este formulario?')) return;
+  if(t==='ingreso'){
     document.getElementById('form-ingreso').reset();
-    curFotoIngreso = null;
-    removeFoto({preventDefault(){},stopPropagation(){}}, 'i');
-    document.getElementById('i-cedula').value = '';
-    document.getElementById('i-contacto').value = '';
-    document.getElementById('i-loc').innerHTML = '';
-  } else if (t === 'ventas') {
-    ventaItems = [];
-    renderItems();
-    document.getElementById('v-cant').value = '1';
-    document.getElementById('v-precio').value = '0';
-    document.getElementById('v-sku').value = '';
-    calcSub();
-  } else if (t === 'voz') {
-    document.getElementById('form-voz').reset();
-    ratings = { nps: 0, cal: 0 };
-    document.querySelectorAll('.rating-chip').forEach(c => c.classList.remove('on','gold'));
-  } else if (t === 'salida') {
+    curFotoIngreso=null; removeFoto({preventDefault(){},stopPropagation(){}},'i');
+    document.getElementById('i-cedula').value=''; document.getElementById('i-contacto').value='';
+    document.getElementById('i-loc').innerHTML='';
+  } else if(t==='ventas'){
+    ventaItems=[]; renderItems();
+    document.getElementById('v-cant').value='1'; document.getElementById('v-precio').value='0';
+    document.getElementById('v-sku').value=''; calcSub();
+  } else if(t==='voz'){
+    Object.keys(vozState).forEach(k=>{vozState[k]=Array.isArray(vozState[k])?[]:'';});
+    document.querySelectorAll('#form-voz .chip').forEach(c=>c.classList.remove('on'));
+    document.querySelectorAll('#form-voz .other-input').forEach(o=>o.classList.remove('show'));
+    document.querySelectorAll('#form-voz .other-input input').forEach(i=>i.value='');
+    document.getElementById('vz-razon').value='';
+    document.getElementById('vz-marca-vino').value='';
+    document.getElementById('vz-recomendacion').value='';
+    document.getElementById('vino-block').classList.remove('show');
+    updateProgress();
+  } else if(t==='salida'){
     document.getElementById('form-salida').reset();
-    curFotoSalida = null;
-    removeFoto({preventDefault(){},stopPropagation(){}}, 's');
-    document.getElementById('s-loc').innerHTML = '';
+    curFotoSalida=null; removeFoto({preventDefault(){},stopPropagation(){}},'s');
+    document.getElementById('s-loc').innerHTML='';
   }
 }
 
 /* ══════════════════════════════════════════════════════════
    INIT
    ══════════════════════════════════════════════════════════ */
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded',()=>{
   loadAllData();
   loadTurn();
   reqLoc('i-loc');
   renderItems();
   calcSub();
+  updateProgress();
 });
 </script>
 </body>
