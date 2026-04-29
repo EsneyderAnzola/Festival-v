@@ -47,7 +47,7 @@
   .turn-badge-pdv{font-size:.62rem;color:var(--gray);font-weight:600;margin-top:1px;}
   .turn-end-btn{background:transparent;border:1px solid var(--border);color:var(--gray);font-size:.62rem;font-weight:700;padding:5px 9px;border-radius:8px;cursor:pointer;text-transform:uppercase;letter-spacing:.08em;}
 
-  /* ═══ TABS (5 columnas) ═══ */
+  /* ═══ TABS (5) ═══ */
   .tab-bar{max-width:480px;margin:0 auto;padding:.875rem 1rem 0;}
   .tab-pills{display:grid;grid-template-columns:repeat(5,1fr);background:rgba(107,15,26,.06);border-radius:14px;padding:4px;border:1px solid var(--border);gap:2px;}
   .tab-btn{padding:9px 2px;border:none;background:transparent;border-radius:10px;font-family:'Outfit',sans-serif;font-size:.62rem;font-weight:700;color:var(--gray);cursor:pointer;transition:all .25s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;}
@@ -93,7 +93,7 @@
   .loc-chip.ok{background:rgba(46,125,50,.08);border-color:rgba(46,125,50,.25);color:var(--green);}
   .loc-chip.err{background:rgba(230,81,0,.08);border-color:rgba(230,81,0,.25);color:var(--orange);}
 
-  /* ═══ VENTAS / PREMIOS ITEMS ═══ */
+  /* ═══ ITEMS (Ventas / Premios) ═══ */
   .item-add-box{background:linear-gradient(135deg,var(--cream-soft),var(--gold-soft));border:1.5px solid var(--border-gold);border-radius:14px;padding:12px;margin-bottom:12px;}
   .item-list{display:flex;flex-direction:column;gap:8px;}
   .item-row{background:white;border:1.5px solid var(--border);border-radius:12px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:10px;}
@@ -106,12 +106,13 @@
   .empty-list{text-align:center;padding:22px 12px;color:var(--gray);font-size:.7rem;font-style:italic;font-weight:500;border:1.5px dashed var(--border);border-radius:12px;}
 
   /* ═══ PREMIO ICON PREVIEW ═══ */
-  .premio-icon-preview{display:flex;align-items:center;gap:10px;background:white;border:1.5px solid var(--border-gold);border-radius:12px;padding:8px 12px;margin-bottom:8px;}
-  .premio-icon-big{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,var(--gold-soft),var(--gold));display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;box-shadow:0 2px 8px rgba(201,169,97,.3);}
+  .premio-icon-preview{display:flex;align-items:center;gap:10px;background:white;border:1.5px solid var(--border-gold);border-radius:12px;padding:10px 12px;margin-bottom:8px;}
+  .premio-icon-big{width:46px;height:46px;border-radius:11px;background:linear-gradient(135deg,var(--gold-soft),var(--gold));display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;box-shadow:0 2px 8px rgba(201,169,97,.3);}
   .premio-icon-info{flex:1;min-width:0;}
   .premio-icon-lbl{font-size:.55rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--gold-deep);}
-  .premio-icon-name{font-size:.82rem;font-weight:800;color:var(--wine-deep);line-height:1.2;margin-top:1px;word-wrap:break-word;}
-  .premio-row-icon{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--gold-soft),#fff);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;border:1px solid var(--border-gold);}
+  .premio-icon-name{font-size:.84rem;font-weight:800;color:var(--wine-deep);line-height:1.2;margin-top:1px;word-wrap:break-word;}
+  .premio-icon-place{font-size:.62rem;color:var(--gray);font-weight:600;margin-top:2px;font-family:'DM Mono',monospace;}
+  .premio-row-icon{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--gold-soft),#fff);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;border:1px solid var(--border-gold);}
   .item-row.premio-row{padding:8px 10px;gap:8px;}
 
   /* ═══ TOTALS ═══ */
@@ -736,7 +737,7 @@
   <button type="button" class="btn-reset" onclick="resetForm('voz')">↺ Reiniciar encuesta</button>
 </form>
 
-<!-- ████████ FORM PREMIOS (NUEVO) ████████ -->
+<!-- ████████ FORM PREMIOS (UN SOLO DROPDOWN) ████████ -->
 <form id="form-premios" style="display:none" onsubmit="submitPremios(event)">
   <div class="info-row">
     <span>📋 Turno: <strong id="pr-info-code">—</strong></span><span>·</span>
@@ -751,7 +752,7 @@
 
     <div class="item-add-box">
       <div class="field">
-        <label class="field-label">Premio entregado</label>
+        <label class="field-label">Premio entregado (incluye lugar)</label>
         <div class="sel-wrap"><select class="sel loading" id="pr-premio" onchange="onPremioSelect()"><option value="">Cargando premios...</option></select></div>
       </div>
 
@@ -760,12 +761,8 @@
         <div class="premio-icon-info">
           <div class="premio-icon-lbl">Premio seleccionado</div>
           <div class="premio-icon-name" id="pr-preview-name">—</div>
+          <div class="premio-icon-place" id="pr-preview-place">📍 —</div>
         </div>
-      </div>
-
-      <div class="field">
-        <label class="field-label">Lugar de entrega</label>
-        <div class="sel-wrap"><select class="sel loading" id="pr-lugar"><option value="">Cargando lugares...</option></select></div>
       </div>
 
       <div class="field">
@@ -868,19 +865,19 @@
 /* ══════════════════════════════════════════════════════════
    ⚙ CONFIG
    ══════════════════════════════════════════════════════════ */
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxGnhsriBR4LxSdvcw6GYz1_NBAbNgPOBY5ClNkumjXFIoGCC3fdC7t9NnsT_6cmaIn/exec';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxBOTErrnMG0EtSB3ot6I9wdA8z7CAHtn_I-bmzyhKH187qwMkuT2WtkkPcuwguBW8O/exec';
 const DATA_SHEET_ID   = '1WgMalVxt5AzaO1tmcY3P-A33LeyyNzG53djej0FUQxA';
 
 /* ══════════════════════════════════════════════════════════
    ESTADO
    ══════════════════════════════════════════════════════════ */
-let DATA = { users: [], cities: [], cityPdvs: {}, skus: [], premios: [], lugaresEntrega: [] };
+let DATA = { users: [], cities: [], cityPdvs: {}, skus: [], premiosLugares: [] };
 let currentTurn = null;
 let userLoc = null;
 let curReport = '';
 let curCode = '';
 let ventaItems = [];
-let premioItems = [];   // NUEVO
+let premioItems = [];
 let curFotoIngreso = null;
 let curFotoSalida = null;
 
@@ -898,12 +895,12 @@ let vozState = {
 };
 
 /* ══════════════════════════════════════════════════════════
-   ICON MAPPER PARA PREMIOS (por palabra clave)
+   ICON MAPPER PARA PREMIOS
    ══════════════════════════════════════════════════════════ */
 function getPremioIcon(name) {
   const n = (name || '').toLowerCase();
   if (n.includes('gorra'))                                                      return '🧢';
-  if (n.includes('camiseta') || n.includes('camisa') || n.includes('polo'))     return '👕';
+  if (n.includes('camiseta') || n.includes('camisa') || n.includes('polo') || n.includes('uniforme')) return '👕';
   if (n.includes('chaqueta') || n.includes('buzo') || n.includes('hoodie'))     return '🧥';
   if (n.includes('llavero'))                                                    return '🔑';
   if (n.includes('vaso') || n.includes('shot'))                                 return '🥃';
@@ -929,7 +926,6 @@ function getPremioIcon(name) {
   if (n.includes('coctel') || n.includes('cóctel') || n.includes('shaker') || n.includes('mezclador')) return '🍸';
   if (n.includes('servilleta') || n.includes('mantel'))                         return '🧻';
   if (n.includes('postal') || n.includes('tarjeta'))                            return '🃏';
-  if (n.includes('camiseta') || n.includes('uniforme'))                         return '👕';
   if (n.includes('reloj'))                                                      return '⌚';
   if (n.includes('foto') || n.includes('imagen') || n.includes('polaroid'))     return '📷';
   if (n.includes('boleta') || n.includes('cupon') || n.includes('cupón') || n.includes('voucher')) return '🎟️';
@@ -972,7 +968,7 @@ function gvizUrl(sheetName){return `https://docs.google.com/spreadsheets/d/${DAT
 
 async function loadAllData() {
   await Promise.all([loadUsuarios(),loadPdv(),loadSku(),loadPremios()]);
-  fillCampanas(); fillCities(); fillSkus(); fillPremios(); fillLugaresEntrega();
+  fillCampanas(); fillCities(); fillSkus(); fillPremios();
 }
 
 async function loadUsuarios() {
@@ -1014,23 +1010,25 @@ async function loadSku() {
   }catch(e){console.warn('loadSku',e);DATA.skus=[];}
 }
 
-/* NUEVO: cargar hoja Premios */
+/* Cada fila = una combinación premio+lugar */
 async function loadPremios() {
   try{
     const r=await fetch(gvizUrl('Premios')); const txt=await r.text();
     const json=JSON.parse(txt.substring(47).slice(0,-2));
-    const premios=[]; const lugares=[];
-    (json.table.rows||[]).forEach(row=>{
-      const nombre = cellStr(row.c[0]);
-      const lugar  = cellStr(row.c[1]);
-      if(nombre) premios.push(nombre);
-      if(lugar)  lugares.push(lugar);
+    const seen={};
+    DATA.premiosLugares = (json.table.rows||[]).map(row=>({
+      premio: cellStr(row.c[0]),
+      lugar:  cellStr(row.c[1])
+    })).filter(p=>{
+      if(!p.premio) return false;
+      const key = p.premio+'|'+p.lugar;
+      if(seen[key]) return false;
+      seen[key]=true;
+      return true;
     });
-    DATA.premios        = [...new Set(premios)];
-    DATA.lugaresEntrega = [...new Set(lugares)].sort();
   }catch(e){
     console.warn('loadPremios',e);
-    DATA.premios=[]; DATA.lugaresEntrega=[];
+    DATA.premiosLugares=[];
   }
 }
 
@@ -1080,20 +1078,16 @@ function fillSkus() {
     DATA.skus.map((s,i)=>{const lbl=s.marca?`${s.nombre} — ${s.marca}`:s.nombre; return `<option value="${i}">${esc(lbl)}</option>`;}).join('');
 }
 
-/* NUEVO: llenar dropdown de premios con icono en el label */
+/* UN SOLO dropdown: "🧢 Gorra Smirnoff (Stand Principal)" */
 function fillPremios() {
   const sel=document.getElementById('pr-premio'); sel.classList.remove('loading');
-  if(!DATA.premios.length){sel.innerHTML='<option value="">No hay premios en hoja Premios</option>';return;}
+  if(!DATA.premiosLugares.length){sel.innerHTML='<option value="">No hay premios en hoja Premios</option>';return;}
   sel.innerHTML='<option value="">Selecciona premio</option>'+
-    DATA.premios.map((p,i)=>`<option value="${i}">${getPremioIcon(p)}  ${esc(p)}</option>`).join('');
-}
-
-/* NUEVO: llenar dropdown de lugares de entrega */
-function fillLugaresEntrega() {
-  const sel=document.getElementById('pr-lugar'); sel.classList.remove('loading');
-  if(!DATA.lugaresEntrega.length){sel.innerHTML='<option value="">No hay lugares definidos</option>';return;}
-  sel.innerHTML='<option value="">Selecciona lugar</option>'+
-    DATA.lugaresEntrega.map(l=>`<option value="${esc(l)}">${esc(l)}</option>`).join('');
+    DATA.premiosLugares.map((p,i)=>{
+      const ic = getPremioIcon(p.premio);
+      const lbl = p.lugar ? `${ic}  ${p.premio} (${p.lugar})` : `${ic}  ${p.premio}`;
+      return `<option value="${i}">${esc(lbl)}</option>`;
+    }).join('');
 }
 
 function onSku() {
@@ -1103,14 +1097,15 @@ function onSku() {
   calcSub();
 }
 
-/* NUEVO: preview de icono al seleccionar premio */
+/* Preview con icono + premio + lugar */
 function onPremioSelect() {
   const idx=document.getElementById('pr-premio').value;
   const preview=document.getElementById('pr-preview');
   if(idx===''){preview.style.display='none';return;}
-  const nombre=DATA.premios[Number(idx)];
-  document.getElementById('pr-preview-icon').textContent = getPremioIcon(nombre);
-  document.getElementById('pr-preview-name').textContent = nombre;
+  const item=DATA.premiosLugares[Number(idx)];
+  document.getElementById('pr-preview-icon').textContent  = getPremioIcon(item.premio);
+  document.getElementById('pr-preview-name').textContent  = item.premio;
+  document.getElementById('pr-preview-place').textContent = item.lugar ? '📍 '+item.lugar : '📍 Sin lugar definido';
   preview.style.display='flex';
 }
 
@@ -1128,7 +1123,7 @@ function reqLoc(elId) {
 }
 
 /* ══════════════════════════════════════════════════════════
-   FOTO con compresión
+   FOTO
    ══════════════════════════════════════════════════════════ */
 async function compressPhoto(file) {
   return new Promise((resolve,reject)=>{
@@ -1248,23 +1243,25 @@ function renderItems() {
 }
 
 /* ══════════════════════════════════════════════════════════
-   PREMIOS — agregar / quitar / render
+   PREMIOS
    ══════════════════════════════════════════════════════════ */
 function addPremio() {
   if(!currentTurn){alert('⚠️ Primero realiza el INGRESO.');switchTab('ingreso');return;}
   const idx=document.getElementById('pr-premio').value;
-  const lugar=document.getElementById('pr-lugar').value;
   const cant=parseInt(document.getElementById('pr-cant').value)||0;
   if(idx===''){alert('Selecciona el premio.');return;}
-  if(!lugar){alert('Selecciona el lugar de entrega.');return;}
   if(cant<=0){alert('Indica una cantidad válida.');return;}
 
-  const nombre = DATA.premios[Number(idx)];
-  premioItems.push({premio:nombre, lugar:lugar, cantidad:cant, icon:getPremioIcon(nombre)});
+  const item = DATA.premiosLugares[Number(idx)];
+  premioItems.push({
+    premio:   item.premio,
+    lugar:    item.lugar || '',
+    cantidad: cant,
+    icon:     getPremioIcon(item.premio)
+  });
 
-  // Reset form de captura
+  // Reset
   document.getElementById('pr-premio').value='';
-  document.getElementById('pr-lugar').value='';
   document.getElementById('pr-cant').value='1';
   document.getElementById('pr-preview').style.display='none';
 
@@ -1283,7 +1280,7 @@ function renderPremios() {
         <div class="premio-row-icon">${it.icon}</div>
         <div class="item-info">
           <div class="item-name">${esc(it.premio)}</div>
-          <div class="item-meta">📍 ${esc(it.lugar)}</div>
+          <div class="item-meta">📍 ${esc(it.lugar||'—')}</div>
         </div>
         <div class="item-sub">× ${it.cantidad}</div>
         <button type="button" class="item-del" onclick="removePremio(${i})">✕</button>
@@ -1295,7 +1292,7 @@ function renderPremios() {
 }
 
 /* ══════════════════════════════════════════════════════════
-   VOZ — chips y progreso
+   VOZ
    ══════════════════════════════════════════════════════════ */
 function onChip(btn) {
   const grid=btn.parentElement;
@@ -1374,7 +1371,7 @@ function switchTab(tab) {
 }
 
 /* ══════════════════════════════════════════════════════════
-   REPORTES WhatsApp
+   REPORTES
    ══════════════════════════════════════════════════════════ */
 function fDate(){const n=new Date(); return n.toLocaleDateString('es-CO',{weekday:'long',year:'numeric',month:'long',day:'numeric'})+' · '+n.toLocaleTimeString('es-CO',{hour:'2-digit',minute:'2-digit'});}
 function lineSep(){return '─'.repeat(32);}
@@ -1498,7 +1495,7 @@ function buildVozReport(code) {
 }
 
 function buildPremiosReport(code) {
-  const lines = premioItems.map(it=>`   ${it.icon} ${it.premio} — 📍 ${it.lugar} — × ${it.cantidad}`);
+  const lines = premioItems.map(it => `   ${it.icon} ${it.premio}${it.lugar?' ('+it.lugar+')':''} — × ${it.cantidad}`);
   const total = premioItems.reduce((a,b)=>a+b.cantidad,0);
   return [
     '🎁 PREMIOS · FESTIVAL DE LICORES',
@@ -1511,7 +1508,7 @@ function buildPremiosReport(code) {
     (lines.length ? lines.join('\n') : '   (Sin entregas)'),
     '',
     lineSep(),
-    `📦 TOTAL UNIDADES ENTREGADAS: ${fmt(total)}`,
+    `📦 TOTAL UNIDADES: ${fmt(total)}`,
     lineSep(),
     '#FestivalLicores #Premios'
   ].join('\n');
@@ -1624,7 +1621,7 @@ async function submitVentas(e) {
   const lblIco=`<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M22 2L15 22l-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>`;
   busy('btn-ventas',true);
 
-  const result = await postJson({
+  await postJson({
     action:'ventas', codigo:currentTurn.code,
     campana:currentTurn.campana, usuario:currentTurn.usuario,
     ciudad:currentTurn.ciudad, pdv:currentTurn.pdv,
@@ -1647,7 +1644,7 @@ async function submitVoz(e) {
   busy('btn-voz',true);
 
   const v = vozState;
-  const result = await postJson({
+  await postJson({
     action:'voz', codigo:currentTurn.code,
     campana:currentTurn.campana, pdv:currentTurn.pdv,
     edad:v.edad, genero:v.genero,
@@ -1673,7 +1670,7 @@ async function submitVoz(e) {
   busy('btn-voz',false,`${lblIco} Enviar Voz Consumidor`);
 }
 
-/* ─────────── PREMIOS (NUEVO) ─────────── */
+/* ─────────── PREMIOS ─────────── */
 async function submitPremios(e) {
   e.preventDefault();
   if(!currentTurn){alert('⚠️ Primero realiza el INGRESO.');switchTab('ingreso');return;}
@@ -1683,11 +1680,23 @@ async function submitPremios(e) {
   busy('btn-premios',true);
 
   const result = await postJson({
-    action:'premios', codigo:currentTurn.code,
-    campana:currentTurn.campana, usuario:currentTurn.usuario,
-    ciudad:currentTurn.ciudad, pdv:currentTurn.pdv,
-    items: premioItems.map(it => ({ premio:it.premio, lugar:it.lugar, cantidad:it.cantidad }))
+    action:  'premios',
+    codigo:  currentTurn.code,
+    campana: currentTurn.campana,
+    usuario: currentTurn.usuario,
+    ciudad:  currentTurn.ciudad,
+    pdv:     currentTurn.pdv,
+    items:   premioItems.map(it => ({
+      premio:   it.premio,
+      lugar:    it.lugar,
+      cantidad: it.cantidad
+    }))
   });
+
+  // Mensaje claro si el backend respondió error
+  if (result && result.status === 'error') {
+    alert('⚠️ El backend respondió error: ' + (result.msg || 'desconocido') + '\n\nRevisa que hayas REDESPLEGADO la Web App después de pegar handlePremios_.');
+  }
 
   curReport = buildPremiosReport(currentTurn.code);
   curCode   = currentTurn.code;
@@ -1728,7 +1737,7 @@ async function submitSalida(e) {
 }
 
 /* ══════════════════════════════════════════════════════════
-   MODAL · COPY
+   MODAL · COPY · RESET · INIT
    ══════════════════════════════════════════════════════════ */
 function showModal() {
   document.getElementById('modal-code').textContent=curCode;
@@ -1746,9 +1755,6 @@ function copyReport() {
   function legacy(){const ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(_){}document.body.removeChild(ta);showCopied();}
 }
 
-/* ══════════════════════════════════════════════════════════
-   RESET
-   ══════════════════════════════════════════════════════════ */
 function resetForm(t) {
   if(!confirm('¿Reiniciar este formulario?')) return;
   if(t==='ingreso'){
@@ -1773,7 +1779,6 @@ function resetForm(t) {
   } else if(t==='premios'){
     premioItems=[]; renderPremios();
     document.getElementById('pr-premio').value='';
-    document.getElementById('pr-lugar').value='';
     document.getElementById('pr-cant').value='1';
     document.getElementById('pr-preview').style.display='none';
   } else if(t==='salida'){
@@ -1783,9 +1788,6 @@ function resetForm(t) {
   }
 }
 
-/* ══════════════════════════════════════════════════════════
-   INIT
-   ══════════════════════════════════════════════════════════ */
 document.addEventListener('DOMContentLoaded',()=>{
   loadAllData();
   loadTurn();
