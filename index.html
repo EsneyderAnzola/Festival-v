@@ -15,7 +15,6 @@
     --shadow-sm:0 2px 12px rgba(61,6,16,0.10);
     --shadow-md:0 8px 28px rgba(61,6,16,0.18);
     --green:#2E7D32; --orange:#E65100; --info:#2A5C8A;
-    /* Colores de marca */
     --smirnoff:#E3000B; --smirnoff-bg:#FFF0F1;
     --oldparr:#1B5E20; --oldparr-bg:#F1F8F2;
     --buchanans:#1A237E; --buchanans-bg:#F0F1F9;
@@ -48,11 +47,11 @@
   .turn-badge-pdv{font-size:.62rem;color:var(--gray);font-weight:600;margin-top:1px;}
   .turn-end-btn{background:transparent;border:1px solid var(--border);color:var(--gray);font-size:.62rem;font-weight:700;padding:5px 9px;border-radius:8px;cursor:pointer;text-transform:uppercase;letter-spacing:.08em;}
 
-  /* ═══ TABS ═══ */
+  /* ═══ TABS (5 columnas) ═══ */
   .tab-bar{max-width:480px;margin:0 auto;padding:.875rem 1rem 0;}
-  .tab-pills{display:grid;grid-template-columns:repeat(4,1fr);background:rgba(107,15,26,.06);border-radius:14px;padding:4px;border:1px solid var(--border);gap:2px;}
-  .tab-btn{padding:9px 4px;border:none;background:transparent;border-radius:10px;font-family:'Outfit',sans-serif;font-size:.66rem;font-weight:700;color:var(--gray);cursor:pointer;transition:all .25s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;}
-  .tab-btn svg{width:16px;height:16px;}
+  .tab-pills{display:grid;grid-template-columns:repeat(5,1fr);background:rgba(107,15,26,.06);border-radius:14px;padding:4px;border:1px solid var(--border);gap:2px;}
+  .tab-btn{padding:9px 2px;border:none;background:transparent;border-radius:10px;font-family:'Outfit',sans-serif;font-size:.62rem;font-weight:700;color:var(--gray);cursor:pointer;transition:all .25s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;}
+  .tab-btn svg{width:15px;height:15px;}
   .tab-btn.active{background:white;color:var(--wine);box-shadow:var(--shadow-sm);}
 
   .main{max-width:480px;margin:0 auto;padding:1rem;}
@@ -94,7 +93,7 @@
   .loc-chip.ok{background:rgba(46,125,50,.08);border-color:rgba(46,125,50,.25);color:var(--green);}
   .loc-chip.err{background:rgba(230,81,0,.08);border-color:rgba(230,81,0,.25);color:var(--orange);}
 
-  /* ═══ VENTAS ITEMS ═══ */
+  /* ═══ VENTAS / PREMIOS ITEMS ═══ */
   .item-add-box{background:linear-gradient(135deg,var(--cream-soft),var(--gold-soft));border:1.5px solid var(--border-gold);border-radius:14px;padding:12px;margin-bottom:12px;}
   .item-list{display:flex;flex-direction:column;gap:8px;}
   .item-row{background:white;border:1.5px solid var(--border);border-radius:12px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:10px;}
@@ -105,6 +104,15 @@
   .item-del{background:transparent;border:none;color:var(--orange);font-size:18px;cursor:pointer;padding:4px 6px;line-height:1;border-radius:6px;}
   .item-del:hover{background:rgba(230,81,0,.1);}
   .empty-list{text-align:center;padding:22px 12px;color:var(--gray);font-size:.7rem;font-style:italic;font-weight:500;border:1.5px dashed var(--border);border-radius:12px;}
+
+  /* ═══ PREMIO ICON PREVIEW ═══ */
+  .premio-icon-preview{display:flex;align-items:center;gap:10px;background:white;border:1.5px solid var(--border-gold);border-radius:12px;padding:8px 12px;margin-bottom:8px;}
+  .premio-icon-big{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,var(--gold-soft),var(--gold));display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;box-shadow:0 2px 8px rgba(201,169,97,.3);}
+  .premio-icon-info{flex:1;min-width:0;}
+  .premio-icon-lbl{font-size:.55rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--gold-deep);}
+  .premio-icon-name{font-size:.82rem;font-weight:800;color:var(--wine-deep);line-height:1.2;margin-top:1px;word-wrap:break-word;}
+  .premio-row-icon{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--gold-soft),#fff);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;border:1px solid var(--border-gold);}
+  .item-row.premio-row{padding:8px 10px;gap:8px;}
 
   /* ═══ TOTALS ═══ */
   .totals-bar{background:linear-gradient(135deg,var(--wine),var(--burgundy));color:white;border-radius:14px;padding:14px 16px;margin-top:12px;display:flex;justify-content:space-between;align-items:center;box-shadow:var(--shadow-md);}
@@ -190,7 +198,6 @@
   .vz-vino-conditional{display:none;}
   .vz-vino-conditional.show{display:block;}
 
-  /* iconos sección */
   .si-demo{background:linear-gradient(135deg,#7B4F9D,#5E3A85);}
   .si-habits{background:linear-gradient(135deg,#D4A574,#B8845A);}
   .si-brands{background:linear-gradient(135deg,#3F51B5,#283593);}
@@ -230,7 +237,7 @@
   @media(max-width:380px){
     .header{padding:1.4rem 1rem 1rem;}
     .main{padding:.75rem;}
-    .tab-btn{font-size:.6rem;}
+    .tab-btn{font-size:.56rem;}
     .vz-q-text{font-size:.78rem;}
     .chip{padding:8px 12px;font-size:.74rem;}
   }
@@ -258,7 +265,7 @@
         <circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.85)" stroke-width="2"/>
         <path d="M12 6v6l4 2" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-linecap="round"/>
       </svg>
-      Ingreso · Ventas · Voz Consumidor · Salida
+      Ingreso · Ventas · Voz · Premios · Salida
     </div>
   </div>
 </div>
@@ -276,7 +283,7 @@
   </div>
 </div>
 
-<!-- ═══════════════════ TABS ═══════════════════ -->
+<!-- ═══════════════════ TABS (5) ═══════════════════ -->
 <div class="tab-bar">
   <div class="tab-pills">
     <button class="tab-btn active" id="tab-ingreso" onclick="switchTab('ingreso')">
@@ -289,7 +296,11 @@
     </button>
     <button class="tab-btn" id="tab-voz" onclick="switchTab('voz')">
       <svg viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Voz Cons.
+      Voz
+    </button>
+    <button class="tab-btn" id="tab-premios" onclick="switchTab('premios')">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Premios
     </button>
     <button class="tab-btn" id="tab-salida" onclick="switchTab('salida')">
       <svg viewBox="0 0 24 24" fill="none"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -428,7 +439,6 @@
     </div>
   </div>
 
-  <!-- ═══ SECCIÓN 1: SOBRE TI ═══ -->
   <div class="vz-section">
     <div class="vz-section-head">
       <div class="vz-section-icon si-demo">👤</div>
@@ -458,7 +468,6 @@
     </div>
   </div>
 
-  <!-- ═══ SECCIÓN 2: HÁBITOS ═══ -->
   <div class="vz-section">
     <div class="vz-section-head">
       <div class="vz-section-icon si-habits">🥃</div>
@@ -503,7 +512,6 @@
     </div>
   </div>
 
-  <!-- ═══ SECCIÓN 3: MARCAS ═══ -->
   <div class="vz-section">
     <div class="vz-section-head">
       <div class="vz-section-icon si-brands">🏷️</div>
@@ -539,7 +547,6 @@
     </div>
   </div>
 
-  <!-- ═══ SECCIÓN 4: SMIRNOFF ═══ -->
   <div class="brand-card brand-smirnoff">
     <div class="brand-bar"></div>
     <div class="brand-head"><div class="brand-logo">SMIRNOFF</div><div class="brand-tag">Vodka</div></div>
@@ -565,7 +572,6 @@
     </div>
   </div>
 
-  <!-- ═══ SECCIÓN 5: OLD PARR ═══ -->
   <div class="brand-card brand-oldparr">
     <div class="brand-bar"></div>
     <div class="brand-head"><div class="brand-logo">OLD PARR</div><div class="brand-tag">Whisky</div></div>
@@ -591,7 +597,6 @@
     </div>
   </div>
 
-  <!-- ═══ SECCIÓN 6: BUCHANANS ═══ -->
   <div class="brand-card brand-buchanans">
     <div class="brand-bar"></div>
     <div class="brand-head"><div class="brand-logo">BUCHANAN'S</div><div class="brand-tag">Whisky</div></div>
@@ -617,7 +622,6 @@
     </div>
   </div>
 
-  <!-- ═══ SECCIÓN 7: VINOS MEICO ═══ -->
   <div class="brand-card brand-meico">
     <div class="brand-bar"></div>
     <div class="brand-head"><div class="brand-logo">VINOS MEICO</div><div class="brand-tag">Vino</div></div>
@@ -692,7 +696,6 @@
     </div>
   </div>
 
-  <!-- ═══ SECCIÓN 8: CIERRE ═══ -->
   <div class="vz-section">
     <div class="vz-section-head">
       <div class="vz-section-icon si-close">🎁</div>
@@ -731,6 +734,65 @@
     Enviar Voz Consumidor
   </button>
   <button type="button" class="btn-reset" onclick="resetForm('voz')">↺ Reiniciar encuesta</button>
+</form>
+
+<!-- ████████ FORM PREMIOS (NUEVO) ████████ -->
+<form id="form-premios" style="display:none" onsubmit="submitPremios(event)">
+  <div class="info-row">
+    <span>📋 Turno: <strong id="pr-info-code">—</strong></span><span>·</span>
+    <span>🏪 <strong id="pr-info-pdv">—</strong></span>
+  </div>
+
+  <div class="card">
+    <div class="card-label">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z" stroke="var(--wine)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Entrega de Premio
+    </div>
+
+    <div class="item-add-box">
+      <div class="field">
+        <label class="field-label">Premio entregado</label>
+        <div class="sel-wrap"><select class="sel loading" id="pr-premio" onchange="onPremioSelect()"><option value="">Cargando premios...</option></select></div>
+      </div>
+
+      <div class="premio-icon-preview" id="pr-preview" style="display:none;">
+        <div class="premio-icon-big" id="pr-preview-icon">🎁</div>
+        <div class="premio-icon-info">
+          <div class="premio-icon-lbl">Premio seleccionado</div>
+          <div class="premio-icon-name" id="pr-preview-name">—</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Lugar de entrega</label>
+        <div class="sel-wrap"><select class="sel loading" id="pr-lugar"><option value="">Cargando lugares...</option></select></div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Cantidad entregada</label>
+        <input class="inp" id="pr-cant" type="number" inputmode="numeric" min="1" value="1" onfocus="this.select()">
+      </div>
+
+      <button type="button" class="btn-add" onclick="addPremio()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+        Agregar entrega
+      </button>
+    </div>
+
+    <div class="divider">Premios entregados en este turno</div>
+    <div id="premio-list" class="item-list"></div>
+
+    <div class="totals-bar">
+      <div><div class="totals-lbl">Total premios entregados</div><div class="totals-meta" id="pr-meta">0 entregas</div></div>
+      <div class="totals-val" id="pr-total">0</div>
+    </div>
+  </div>
+
+  <button class="btn-primary btn-gold" type="submit" id="btn-premios">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M22 2L15 22l-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+    Guardar Premios
+  </button>
+  <button type="button" class="btn-reset" onclick="resetForm('premios')">↺ Limpiar lista</button>
 </form>
 
 <!-- ████████ FORM SALIDA ████████ -->
@@ -804,24 +866,24 @@
 
 <script>
 /* ══════════════════════════════════════════════════════════
-   ⚙ CONFIG — pega aquí la URL de tu Web App de Apps Script
+   ⚙ CONFIG
    ══════════════════════════════════════════════════════════ */
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyDCa4UbCeQJiq3sHXO0pFs6XDEmMdAXMNxaCkIxiZLIZE1v4TuA_7ULF1qBBEP3NdL/exec';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxGnhsriBR4LxSdvcw6GYz1_NBAbNgPOBY5ClNkumjXFIoGCC3fdC7t9NnsT_6cmaIn/exec';
 const DATA_SHEET_ID   = '1WgMalVxt5AzaO1tmcY3P-A33LeyyNzG53djej0FUQxA';
 
 /* ══════════════════════════════════════════════════════════
    ESTADO
    ══════════════════════════════════════════════════════════ */
-let DATA = { users: [], cities: [], cityPdvs: {}, skus: [] };
+let DATA = { users: [], cities: [], cityPdvs: {}, skus: [], premios: [], lugaresEntrega: [] };
 let currentTurn = null;
 let userLoc = null;
 let curReport = '';
 let curCode = '';
 let ventaItems = [];
+let premioItems = [];   // NUEVO
 let curFotoIngreso = null;
 let curFotoSalida = null;
 
-// Estado completo de la encuesta Voz Consumidor
 let vozState = {
   edad:'', genero:'',
   frecuencia:'', tipo_licor:'', tipo_licor_otro:'', lugar_compra:'',
@@ -836,6 +898,46 @@ let vozState = {
 };
 
 /* ══════════════════════════════════════════════════════════
+   ICON MAPPER PARA PREMIOS (por palabra clave)
+   ══════════════════════════════════════════════════════════ */
+function getPremioIcon(name) {
+  const n = (name || '').toLowerCase();
+  if (n.includes('gorra'))                                                      return '🧢';
+  if (n.includes('camiseta') || n.includes('camisa') || n.includes('polo'))     return '👕';
+  if (n.includes('chaqueta') || n.includes('buzo') || n.includes('hoodie'))     return '🧥';
+  if (n.includes('llavero'))                                                    return '🔑';
+  if (n.includes('vaso') || n.includes('shot'))                                 return '🥃';
+  if (n.includes('copa'))                                                       return '🍷';
+  if (n.includes('botella') || n.includes('miniatura'))                         return '🍾';
+  if (n.includes('cerveza'))                                                    return '🍺';
+  if (n.includes('encendedor') || n.includes('mechero'))                        return '🔥';
+  if (n.includes('destapador') || n.includes('abridor') || n.includes('descorchador') || n.includes('sacacorchos')) return '🍻';
+  if (n.includes('bolsa') || n.includes('tula') || n.includes('morral') || n.includes('mochila') || n.includes('bolso')) return '🛍️';
+  if (n.includes('mug') || n.includes('taza') || n.includes('pocillo'))         return '☕';
+  if (n.includes('termo'))                                                      return '🍵';
+  if (n.includes('hielera') || n.includes('cooler'))                            return '🧊';
+  if (n.includes('pulsera') || n.includes('manilla') || n.includes('brazalete')) return '📿';
+  if (n.includes('cuaderno') || n.includes('libreta') || n.includes('agenda'))  return '📓';
+  if (n.includes('lapicero') || n.includes('lapiz') || n.includes('esfero') || n.includes('boligrafo') || n.includes('bolígrafo')) return '🖊️';
+  if (n.includes('sombrilla') || n.includes('paraguas'))                        return '☂️';
+  if (n.includes('toalla'))                                                     return '🧴';
+  if (n.includes('sticker') || n.includes('adhesivo') || n.includes('calcomania') || n.includes('calcomanía')) return '🏷️';
+  if (n.includes('cordon') || n.includes('cordón') || n.includes('lanyard'))    return '🎗️';
+  if (n.includes('pin') || n.includes('boton') || n.includes('botón') || n.includes('escarapela')) return '📌';
+  if (n.includes('usb') || n.includes('memoria'))                               return '💾';
+  if (n.includes('audifono') || n.includes('audífono') || n.includes('headphone') || n.includes('parlante'))  return '🎧';
+  if (n.includes('coctel') || n.includes('cóctel') || n.includes('shaker') || n.includes('mezclador')) return '🍸';
+  if (n.includes('servilleta') || n.includes('mantel'))                         return '🧻';
+  if (n.includes('postal') || n.includes('tarjeta'))                            return '🃏';
+  if (n.includes('camiseta') || n.includes('uniforme'))                         return '👕';
+  if (n.includes('reloj'))                                                      return '⌚';
+  if (n.includes('foto') || n.includes('imagen') || n.includes('polaroid'))     return '📷';
+  if (n.includes('boleta') || n.includes('cupon') || n.includes('cupón') || n.includes('voucher')) return '🎟️';
+  if (n.includes('caja') || n.includes('kit') || n.includes('estuche'))         return '📦';
+  return '🎁';
+}
+
+/* ══════════════════════════════════════════════════════════
    PERSISTENCIA TURNO
    ══════════════════════════════════════════════════════════ */
 function saveTurn(t) { try{localStorage.setItem('turn_licores',JSON.stringify(t));}catch(_){} renderTurnBadge(); }
@@ -848,7 +950,7 @@ function renderTurnBadge() {
     b.classList.add('active');
     document.getElementById('turn-code').textContent = currentTurn.code;
     document.getElementById('turn-pdv').textContent  = currentTurn.pdv || '—';
-    ['v','vz','s'].forEach(p => {
+    ['v','vz','pr','s'].forEach(p => {
       const c=document.getElementById(`${p}-info-code`), v=document.getElementById(`${p}-info-pdv`);
       if (c) c.textContent = currentTurn.code;
       if (v) v.textContent = currentTurn.pdv || '—';
@@ -860,17 +962,17 @@ function renderTurnBadge() {
 
 function endTurn() {
   if (!confirm('¿Cerrar el turno actual? Se borrará el código guardado en este dispositivo.')) return;
-  clearTurn(); ventaItems = []; renderItems();
+  clearTurn(); ventaItems = []; premioItems = []; renderItems(); renderPremios();
 }
 
 /* ══════════════════════════════════════════════════════════
-   CARGA gviz (sheet de datos)
+   CARGA gviz
    ══════════════════════════════════════════════════════════ */
 function gvizUrl(sheetName){return `https://docs.google.com/spreadsheets/d/${DATA_SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(sheetName)}`;}
 
 async function loadAllData() {
-  await Promise.all([loadUsuarios(),loadPdv(),loadSku()]);
-  fillCampanas(); fillCities(); fillSkus();
+  await Promise.all([loadUsuarios(),loadPdv(),loadSku(),loadPremios()]);
+  fillCampanas(); fillCities(); fillSkus(); fillPremios(); fillLugaresEntrega();
 }
 
 async function loadUsuarios() {
@@ -910,6 +1012,26 @@ async function loadSku() {
       tipo:   cellStr(row.c[2]), precio: cellNum(row.c[3])
     })).filter(s=>s.nombre);
   }catch(e){console.warn('loadSku',e);DATA.skus=[];}
+}
+
+/* NUEVO: cargar hoja Premios */
+async function loadPremios() {
+  try{
+    const r=await fetch(gvizUrl('Premios')); const txt=await r.text();
+    const json=JSON.parse(txt.substring(47).slice(0,-2));
+    const premios=[]; const lugares=[];
+    (json.table.rows||[]).forEach(row=>{
+      const nombre = cellStr(row.c[0]);
+      const lugar  = cellStr(row.c[1]);
+      if(nombre) premios.push(nombre);
+      if(lugar)  lugares.push(lugar);
+    });
+    DATA.premios        = [...new Set(premios)];
+    DATA.lugaresEntrega = [...new Set(lugares)].sort();
+  }catch(e){
+    console.warn('loadPremios',e);
+    DATA.premios=[]; DATA.lugaresEntrega=[];
+  }
 }
 
 function cellStr(c){return (c && c.v != null) ? String(c.v).trim() : '';}
@@ -958,11 +1080,38 @@ function fillSkus() {
     DATA.skus.map((s,i)=>{const lbl=s.marca?`${s.nombre} — ${s.marca}`:s.nombre; return `<option value="${i}">${esc(lbl)}</option>`;}).join('');
 }
 
+/* NUEVO: llenar dropdown de premios con icono en el label */
+function fillPremios() {
+  const sel=document.getElementById('pr-premio'); sel.classList.remove('loading');
+  if(!DATA.premios.length){sel.innerHTML='<option value="">No hay premios en hoja Premios</option>';return;}
+  sel.innerHTML='<option value="">Selecciona premio</option>'+
+    DATA.premios.map((p,i)=>`<option value="${i}">${getPremioIcon(p)}  ${esc(p)}</option>`).join('');
+}
+
+/* NUEVO: llenar dropdown de lugares de entrega */
+function fillLugaresEntrega() {
+  const sel=document.getElementById('pr-lugar'); sel.classList.remove('loading');
+  if(!DATA.lugaresEntrega.length){sel.innerHTML='<option value="">No hay lugares definidos</option>';return;}
+  sel.innerHTML='<option value="">Selecciona lugar</option>'+
+    DATA.lugaresEntrega.map(l=>`<option value="${esc(l)}">${esc(l)}</option>`).join('');
+}
+
 function onSku() {
   const idx=document.getElementById('v-sku').value; if(idx==='') return;
   const s=DATA.skus[Number(idx)];
   if(s&&s.precio>0) document.getElementById('v-precio').value=s.precio;
   calcSub();
+}
+
+/* NUEVO: preview de icono al seleccionar premio */
+function onPremioSelect() {
+  const idx=document.getElementById('pr-premio').value;
+  const preview=document.getElementById('pr-preview');
+  if(idx===''){preview.style.display='none';return;}
+  const nombre=DATA.premios[Number(idx)];
+  document.getElementById('pr-preview-icon').textContent = getPremioIcon(nombre);
+  document.getElementById('pr-preview-name').textContent = nombre;
+  preview.style.display='flex';
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -1099,6 +1248,53 @@ function renderItems() {
 }
 
 /* ══════════════════════════════════════════════════════════
+   PREMIOS — agregar / quitar / render
+   ══════════════════════════════════════════════════════════ */
+function addPremio() {
+  if(!currentTurn){alert('⚠️ Primero realiza el INGRESO.');switchTab('ingreso');return;}
+  const idx=document.getElementById('pr-premio').value;
+  const lugar=document.getElementById('pr-lugar').value;
+  const cant=parseInt(document.getElementById('pr-cant').value)||0;
+  if(idx===''){alert('Selecciona el premio.');return;}
+  if(!lugar){alert('Selecciona el lugar de entrega.');return;}
+  if(cant<=0){alert('Indica una cantidad válida.');return;}
+
+  const nombre = DATA.premios[Number(idx)];
+  premioItems.push({premio:nombre, lugar:lugar, cantidad:cant, icon:getPremioIcon(nombre)});
+
+  // Reset form de captura
+  document.getElementById('pr-premio').value='';
+  document.getElementById('pr-lugar').value='';
+  document.getElementById('pr-cant').value='1';
+  document.getElementById('pr-preview').style.display='none';
+
+  renderPremios();
+}
+
+function removePremio(i){ premioItems.splice(i,1); renderPremios(); }
+
+function renderPremios() {
+  const list=document.getElementById('premio-list');
+  if(!premioItems.length){
+    list.innerHTML='<div class="empty-list">Sin premios entregados todavía</div>';
+  } else {
+    list.innerHTML=premioItems.map((it,i)=>`
+      <div class="item-row premio-row">
+        <div class="premio-row-icon">${it.icon}</div>
+        <div class="item-info">
+          <div class="item-name">${esc(it.premio)}</div>
+          <div class="item-meta">📍 ${esc(it.lugar)}</div>
+        </div>
+        <div class="item-sub">× ${it.cantidad}</div>
+        <button type="button" class="item-del" onclick="removePremio(${i})">✕</button>
+      </div>`).join('');
+  }
+  const total=premioItems.reduce((a,b)=>a+b.cantidad,0);
+  document.getElementById('pr-total').textContent=fmt(total);
+  document.getElementById('pr-meta').textContent=`${premioItems.length} entrega${premioItems.length!==1?'s':''}`;
+}
+
+/* ══════════════════════════════════════════════════════════
    VOZ — chips y progreso
    ══════════════════════════════════════════════════════════ */
 function onChip(btn) {
@@ -1118,7 +1314,6 @@ function onChip(btn) {
     vozState[key]=val;
   }
 
-  // Mostrar/ocultar campo "Otro"
   if(otherKey) {
     const otherBox=document.getElementById('other-'+otherKey);
     const isOtroSelected = isMulti
@@ -1142,7 +1337,6 @@ function isAnswered(v) {
 }
 
 function updateProgress() {
-  // Las 23 preguntas obligatorias
   let answered=0;
   const requiredKeys=[
     'edad','genero','frecuencia','tipo_licor','lugar_compra',
@@ -1153,14 +1347,12 @@ function updateProgress() {
     'consume_vino','comparte_vino','momentos_vino','tipo_vino','factor_vino','marca_vino',
     'incentivo','considero_otra','recomendacion'
   ];
-  // Si no consume vino, las 6 preguntas de vino se consideran "N/A" (resueltas)
   if (vozState.consume_vino==='No') {
     ['comparte_vino','momentos_vino','tipo_vino','factor_vino','marca_vino'].forEach(k=>{
       if(!isAnswered(vozState[k])) answered++;
     });
   }
   requiredKeys.forEach(k=>{ if(isAnswered(vozState[k])) answered++; });
-  // Evita doble conteo si "No" en vino
   if(answered>23) answered=23;
   const pct=Math.round((answered/23)*100);
   document.getElementById('vz-fill').style.width=pct+'%';
@@ -1171,7 +1363,7 @@ function updateProgress() {
    TABS
    ══════════════════════════════════════════════════════════ */
 function switchTab(tab) {
-  ['ingreso','ventas','voz','salida'].forEach(t=>{
+  ['ingreso','ventas','voz','premios','salida'].forEach(t=>{
     document.getElementById(`form-${t}`).style.display=tab===t?'':'none';
     document.getElementById(`tab-${t}`).classList.toggle('active',tab===t);
   });
@@ -1305,6 +1497,26 @@ function buildVozReport(code) {
   ].join('\n');
 }
 
+function buildPremiosReport(code) {
+  const lines = premioItems.map(it=>`   ${it.icon} ${it.premio} — 📍 ${it.lugar} — × ${it.cantidad}`);
+  const total = premioItems.reduce((a,b)=>a+b.cantidad,0);
+  return [
+    '🎁 PREMIOS · FESTIVAL DE LICORES',
+    lineSep(),
+    `📅 ${fDate()}`,
+    `🏪 ${currentTurn?currentTurn.pdv:'—'}`,
+    `🔒 Turno: ${code}`,
+    '',
+    `🏆 ENTREGAS (${premioItems.length}):`,
+    (lines.length ? lines.join('\n') : '   (Sin entregas)'),
+    '',
+    lineSep(),
+    `📦 TOTAL UNIDADES ENTREGADAS: ${fmt(total)}`,
+    lineSep(),
+    '#FestivalLicores #Premios'
+  ].join('\n');
+}
+
 function buildSalidaReport(code, fotoUrl) {
   const obs=document.getElementById('s-obs').value||'(Sin novedad)';
   const total=document.getElementById('s-total').value||'0';
@@ -1332,7 +1544,7 @@ function buildSalidaReport(code, fotoUrl) {
 }
 
 /* ══════════════════════════════════════════════════════════
-   POST a Apps Script — text/plain (CORS-friendly, sin preflight)
+   POST a Apps Script
    ══════════════════════════════════════════════════════════ */
 function genCode() {
   const chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
@@ -1461,6 +1673,29 @@ async function submitVoz(e) {
   busy('btn-voz',false,`${lblIco} Enviar Voz Consumidor`);
 }
 
+/* ─────────── PREMIOS (NUEVO) ─────────── */
+async function submitPremios(e) {
+  e.preventDefault();
+  if(!currentTurn){alert('⚠️ Primero realiza el INGRESO.');switchTab('ingreso');return;}
+  if(!premioItems.length){alert('Agrega al menos un premio entregado.');return;}
+
+  const lblIco=`<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M22 2L15 22l-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>`;
+  busy('btn-premios',true);
+
+  const result = await postJson({
+    action:'premios', codigo:currentTurn.code,
+    campana:currentTurn.campana, usuario:currentTurn.usuario,
+    ciudad:currentTurn.ciudad, pdv:currentTurn.pdv,
+    items: premioItems.map(it => ({ premio:it.premio, lugar:it.lugar, cantidad:it.cantidad }))
+  });
+
+  curReport = buildPremiosReport(currentTurn.code);
+  curCode   = currentTurn.code;
+  showModal();
+
+  busy('btn-premios',false,`${lblIco} Guardar Premios`);
+}
+
 /* ─────────── SALIDA ─────────── */
 async function submitSalida(e) {
   e.preventDefault();
@@ -1535,6 +1770,12 @@ function resetForm(t) {
     document.getElementById('vz-recomendacion').value='';
     document.getElementById('vino-block').classList.remove('show');
     updateProgress();
+  } else if(t==='premios'){
+    premioItems=[]; renderPremios();
+    document.getElementById('pr-premio').value='';
+    document.getElementById('pr-lugar').value='';
+    document.getElementById('pr-cant').value='1';
+    document.getElementById('pr-preview').style.display='none';
   } else if(t==='salida'){
     document.getElementById('form-salida').reset();
     curFotoSalida=null; removeFoto({preventDefault(){},stopPropagation(){}},'s');
@@ -1550,6 +1791,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   loadTurn();
   reqLoc('i-loc');
   renderItems();
+  renderPremios();
   calcSub();
   updateProgress();
 });
